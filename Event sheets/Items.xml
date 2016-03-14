@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Items</name>
+    <events>
+        <comment>ItemType, ItemMod, ItemName1, ItemName2</comment>
+        <event-block sid="2752143210391959">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="8787826234108106" type="System" />
+                <condition id="6" name="Is empty" sid="1911880163537183" type="ItemDB" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="3943517466350452" type="Function">
+                    <param id="0" name="Name">&quot;RegisterItem&quot;</param>
+                    <param id="1" name="Parameter {n}">0{###}99{###}&quot;Butterscotch Pie&quot;{###}&quot;Pie&quot;</param>
+                </action>
+                <action id="0" name="Call function" sid="2866502868054797" type="Function">
+                    <param id="0" name="Name">&quot;RegisterItem&quot;</param>
+                    <param id="1" name="Parameter {n}">0{###}90{###}&quot;Instant Noodles&quot;{###}&quot;I.Noodles&quot;</param>
+                </action>
+                <action id="0" name="Call function" sid="2972695806626813" type="Function">
+                    <param id="0" name="Name">&quot;RegisterItem&quot;</param>
+                    <param id="1" name="Parameter {n}">0{###}60{###}&quot;Face Steak&quot;{###}&quot;Steak&quot;</param>
+                </action>
+                <action id="0" name="Call function" sid="8628336839377844" type="Function">
+                    <param id="0" name="Name">&quot;RegisterItem&quot;</param>
+                    <param id="1" name="Parameter {n}">0{###}40{###}&quot;Legendary Hero&quot;{###}&quot;L. Hero&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3233093914736004">
+            <conditions>
+                <condition id="0" name="On function" sid="363661523986421" type="Function">
+                    <param id="0" name="Name">&quot;RegisterItem&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Push" sid="5239690354155186" type="ItemDB">
+                    <param id="0" name="Where">0</param>
+                    <param id="1" name="Value">0</param>
+                    <param id="2" name="Axis">0</param>
+                </action>
+                <action id="3" name="Set at XY" sid="2395370485202404" type="ItemDB">
+                    <param id="0" name="X">ItemDB.Width-1</param>
+                    <param id="1" name="Y">0</param>
+                    <param id="2" name="Value">Function.Param(0)</param>
+                </action>
+                <action id="3" name="Set at XY" sid="2495033935705209" type="ItemDB">
+                    <param id="0" name="X">ItemDB.Width-1</param>
+                    <param id="1" name="Y">1</param>
+                    <param id="2" name="Value">Function.Param(1)</param>
+                </action>
+                <action id="3" name="Set at XY" sid="7774260971611081" type="ItemDB">
+                    <param id="0" name="X">ItemDB.Width-1</param>
+                    <param id="1" name="Y">2</param>
+                    <param id="2" name="Value">Function.Param(2)</param>
+                </action>
+                <action id="3" name="Set at XY" sid="1305926164034302" type="ItemDB">
+                    <param id="0" name="X">ItemDB.Width-1</param>
+                    <param id="1" name="Y">3</param>
+                    <param id="2" name="Value">Function.Param(3)</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

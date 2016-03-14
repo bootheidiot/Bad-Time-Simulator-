@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>AttackLoader</name>
+    <events>
+        <event-group description="" sid="5235824354903566" title="AttackLoader">
+            <sub-events>
+                <variable constant="0" name="FileIndex" sid="8842408703534389" static="1" type="number">0</variable>
+                <event-block sid="3323177073111975">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="392980208717934" type="System" />
+                        <condition id="4" name="Is empty" sid="6716366940052336" type="AttackList" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Push" sid="4455327624016498" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_bluebone&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="9396866984468434" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_bonegap1&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="8811065622972931" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_bonegap1fast&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="3210289417785432" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_bonegap2&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="2069748953422304" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_boneslideh&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="5059129090672449" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_boneslidev&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="375272527352408" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_bonestab1&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="4170005015431915" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_bonestab2&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="1011321954321543" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_bonestab3&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="9768700699396818" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_final&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="4534521751290753" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_intro&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="3391111219319787" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_multi1&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="8132783675693353" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_multi2&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="8935044343984921" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_multi3&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="9455036665125524" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_platformblaster&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="6647189041973594" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_platformblasterfast&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="1362197829392964" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_platforms1&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="7745298823847402" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_platforms2&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="1260174120863198" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_platforms3&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="8766372860492814" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_platforms4&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="9777307155362394" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_platforms4hard&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="904902605703142" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_randomblaster1&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="2951841823605826" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_randomblaster2&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="5" name="Push" sid="7956789796541343" type="AttackLoader">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;sans_spare&quot;</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="0" name="Request URL" sid="5737873904560182" type="AJAX">
+                            <param id="0" name="Tag">AttackLoader.At(FileIndex)</param>
+                            <param id="1" name="URL">AttackLoader.At(FileIndex) &amp; &quot;.csv&quot;</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="3506252319395745" type="System">
+                            <param id="0" name="Object to create">BattleFont</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">8</param>
+                            <param id="3" name="Y">8</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7557481260664586" type="BattleFont">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Value">&quot;Loading&quot;</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="6311234250436831" type="BattleFont">
+                            <param id="0" name="Width">640</param>
+                        </action>
+                        <action id="-6" name="Set height" sid="6768412320433234" type="BattleFont">
+                            <param id="0" name="Height">32</param>
+                        </action>
+                        <action id="0" name="Set text" sid="866871016798015" type="BattleFont">
+                            <param id="0" name="Text">&quot;LOADING ATTACKS &quot; &amp; FileIndex &amp; &quot; / &quot; &amp; AttackLoader.Width</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5892996856959474">
+                    <conditions>
+                        <condition id="0" name="On completed" sid="3267467515272994" type="AJAX">
+                            <param id="0" name="Tag">AttackLoader.At(FileIndex)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Add key" sid="2331652607708607" type="AttackList">
+                            <param id="0" name="Key">AttackLoader.At(FileIndex)</param>
+                            <param id="1" name="Value">AJAX.LastData</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="8186921132855462" type="System">
+                            <param id="0" name="Variable">FileIndex</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="560021537350723">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="9550501475992979" type="RPGText">
+                                    <param id="0" name="Instance variable">Name</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Loading&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="3276516335364258" type="RPGText">
+                                    <param id="0" name="Text">&quot;LOADING ATTACKS &quot; &amp; FileIndex &amp; &quot; / &quot; &amp; AttackLoader.Width</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2426976993845788">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="8862272643220147" type="System">
+                                    <param id="0" name="Variable">FileIndex</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">AttackLoader.Width</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Request URL" sid="9464992944166132" type="AJAX">
+                                    <param id="0" name="Tag">AttackLoader.At(FileIndex)</param>
+                                    <param id="1" name="URL">AttackLoader.At(FileIndex) &amp; &quot;.csv&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="804857358706105">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="6220244528545929" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="9375701136055283" type="Function">
+                                    <param id="0" name="Name">&quot;AttackLoadFinished&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="9037476199038736">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="7126214591371814" type="RPGText">
+                                            <param id="0" name="Instance variable">Name</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Loading&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="2908252134021302" type="RPGText">
+                                            <param id="0" name="Instance variable">Timeout</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

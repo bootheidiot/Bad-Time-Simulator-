@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Menus</name>
+    <events>
+        <event-group description="" sid="9544187866392408" title="Menus">
+            <sub-events>
+                <event-block sid="8695406175781546">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="2536306279577205" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set size" sid="6521126164740445" type="MenuStack">
+                            <param id="0" name="Width">1</param>
+                            <param id="1" name="Height">2</param>
+                            <param id="2" name="Depth">1</param>
+                        </action>
+                        <action id="2" name="Set at X" sid="2237702793427054" type="MenuStack">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="716159479864057" type="MenuStack">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4828060419500584">
+                    <conditions>
+                        <condition id="0" name="On function" sid="2564267408156807" type="Function">
+                            <param id="0" name="Name">&quot;MenuBackAction&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set at XY" sid="9110991041588691" type="MenuStack">
+                            <param id="0" name="X">MenuStack.Width-1</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6812480347916221">
+                    <conditions>
+                        <condition id="0" name="On function" sid="6093544036389522" type="Function">
+                            <param id="0" name="Name">&quot;MenuSelect&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="8318217981666953" type="MenuItem">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">MenuStack.Back</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="ID" sid="2815912854738037" static="0" type="number">0</variable>
+                        <variable constant="0" name="X" sid="8524770482276571" static="0" type="number">0</variable>
+                        <variable constant="0" name="Y" sid="9238547187654585" static="0" type="number">0</variable>
+                        <variable constant="0" name="TargetID" sid="233166752012437" static="0" type="number">0</variable>
+                        <variable constant="0" name="TargetDist" sid="2410064365196961" static="0" type="number">0</variable>
+                        <event-block sid="1594152053817437">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="4272555456716721" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="4594994607758385" type="System">
+                                    <param id="0" name="Variable">ID</param>
+                                    <param id="1" name="Value">MenuItem.ID</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="696878987565706" type="System">
+                                    <param id="0" name="Variable">X</param>
+                                    <param id="1" name="Value">MenuItem.X</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="8293651089226726" type="System">
+                                    <param id="0" name="Variable">Y</param>
+                                    <param id="1" name="Value">MenuItem.Y</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="9776927128359744" type="System">
+                                    <param id="0" name="Variable">TargetID</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="1609227162741931" type="System">
+                                    <param id="0" name="Variable">TargetDist</param>
+                                    <param id="1" name="Value">Infinity</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8905070602913116">
+                            <conditions>
+                                <condition id="-19" name="Pick all" sid="1653500525400594" type="System">
+                                    <param id="0" name="Object">MenuItem</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="6364681126252615" type="MenuItem">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">ID</param>
+                                </condition>
+                                <condition id="-11" name="For Each" sid="5387478993854357" type="System">
+                                    <param id="0" name="Object">MenuItem</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="Ang" sid="7217441111294608" static="0" type="number">0</variable>
+                                <variable constant="0" name="Dist" sid="1707862956084376" static="0" type="number">0</variable>
+                                <event-block sid="4024397130339288">
+                                    <conditions>
+                                        <condition id="-1" name="Every tick" sid="8217736276366752" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="8249840543647935" type="System">
+                                            <param id="0" name="Variable">Ang</param>
+                                            <param id="1" name="Value">angle(X, Y, MenuItem.X, MenuItem.Y)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="3221251959880023">
+                                    <conditions>
+                                        <condition id="-39" name="Is within angle" sid="4670233778268817" type="System">
+                                            <param id="0" name="Angle 1">Ang</param>
+                                            <param id="1" name="Within">0.5</param>
+                                            <param id="2" name="Angle 2">Function.Param(0)*90</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="2878356591442433" type="System">
+                                            <param id="0" name="Variable">Dist</param>
+                                            <param id="1" name="Value">distance(X, Y, MenuItem.X, MenuItem.Y)</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="8763702995733969">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="7408325317196445" type="System">
+                                                    <param id="0" name="Variable">Dist</param>
+                                                    <param id="1" name="Comparison">2</param>
+                                                    <param id="2" name="Value">TargetDist</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="6677787101670142" type="System">
+                                                    <param id="0" name="Variable">TargetDist</param>
+                                                    <param id="1" name="Value">Dist</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="7672361800870457" type="System">
+                                                    <param id="0" name="Variable">TargetID</param>
+                                                    <param id="1" name="Value">MenuItem.ID</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="6829704236924412">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="6840381072597691" type="System">
+                                    <param id="0" name="Variable">TargetID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="9719461567624534" type="System">
+                                    <param id="0" name="Variable">TargetDist</param>
+                                    <param id="1" name="Value">-Infinity</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7205705008682332">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1946523089989991" type="System">
+                                    <param id="0" name="Variable">TargetID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">-1</param>
+                                </condition>
+                                <condition id="-19" name="Pick all" sid="5495910486778289" type="System">
+                                    <param id="0" name="Object">MenuItem</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="1200038864830058" type="MenuItem">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">ID</param>
+                                </condition>
+                                <condition id="-11" name="For Each" sid="1002550783929431" type="System">
+                                    <param id="0" name="Object">MenuItem</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="Ang" sid="1649473131817865" static="0" type="number">0</variable>
+                                <variable constant="0" name="Dist" sid="6161590805861242" static="0" type="number">0</variable>
+                                <event-block sid="3288759695950013">
+                                    <conditions>
+                                        <condition id="-1" name="Every tick" sid="6644303941234649" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="8469540403391451" type="System">
+                                            <param id="0" name="Variable">Ang</param>
+                                            <param id="1" name="Value">angle(X, Y, MenuItem.X, MenuItem.Y)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2101686034581306">
+                                    <conditions>
+                                        <condition id="-39" name="Is within angle" sid="3642588278070715" type="System">
+                                            <param id="0" name="Angle 1">Ang</param>
+                                            <param id="1" name="Within">0.5</param>
+                                            <param id="2" name="Angle 2">Function.Param(0)*90 - 180</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="6365109525161081" type="System">
+                                            <param id="0" name="Variable">Dist</param>
+                                            <param id="1" name="Value">distance(X, Y, MenuItem.X, MenuItem.Y)</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="4105919903643933">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="8685340577799612" type="System">
+                                                    <param id="0" name="Variable">Dist</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">TargetDist</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="282073525690326" type="System">
+                                                    <param id="0" name="Variable">TargetDist</param>
+                                                    <param id="1" name="Value">Dist</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="1729884442476336" type="System">
+                                                    <param id="0" name="Variable">TargetID</param>
+                                                    <param id="1" name="Value">MenuItem.ID</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="9469077732291459">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7794111895385165" type="System">
+                                    <param id="0" name="Variable">TargetID</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="2" name="Set at X" sid="8260832488824598" type="MenuStack">
+                                    <param id="0" name="X">MenuStack.Width-1</param>
+                                    <param id="1" name="Value">TargetID</param>
+                                </action>
+                                <action id="0" name="Play" sid="8688491376371888" type="Audio">
+                                    <param id="0" name="Audio file">MenuCursor</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="6223600297693287">
+                    <conditions>
+                        <condition id="0" name="On function" sid="8551949843133107" type="Function">
+                            <param id="0" name="Name">&quot;RunMenu&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6930416785468451">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="3614830499205843" type="VPad">
+                                    <param id="0" name="Instance variable">Confirm</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">VPad.LastConfirm</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="2942145973121762" type="MenuItem">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">MenuStack.Back</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="3593834327907471" type="MenuItem">
+                                    <param id="0" name="Instance variable">Action</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push" sid="1536698611713637" type="MenuStack">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">0</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="4344933988603167" type="Function">
+                                    <param id="0" name="Name">MenuItem.Action</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Play" sid="2924208778412062" type="Audio">
+                                    <param id="0" name="Audio file">MenuSelect</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4734399919399368">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="4808674276307461" type="VPad">
+                                    <param id="0" name="Instance variable">Cancel</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">VPad.LastCancel</param>
+                                </condition>
+                                <condition id="1" name="Compare at XY" sid="3783945059357823" type="MenuStack">
+                                    <param id="0" name="X">MenuStack.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Comparison">1</param>
+                                    <param id="3" name="Value">&quot;&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="FuncName" sid="7156101104530386" static="0" type="text"></variable>
+                                <event-block sid="8656451840730673">
+                                    <conditions>
+                                        <condition id="-1" name="Every tick" sid="122651102211695" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="1553611434833798" type="System">
+                                            <param id="0" name="Variable">FuncName</param>
+                                            <param id="1" name="Value">MenuStack.At(MenuStack.Width-1, 1)</param>
+                                        </action>
+                                        <action id="6" name="Pop" sid="7479290068950634" type="MenuStack">
+                                            <param id="0" name="Where">0</param>
+                                            <param id="1" name="Axis">0</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="6459164775285865" type="Function">
+                                            <param id="0" name="Name">FuncName</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="0" name="Play" sid="57483967232436" type="Audio">
+                                            <param id="0" name="Audio file">MenuSelect</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="3623176702869784">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="898589353683862" type="VPad">
+                                    <param id="0" name="Instance variable">Right</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">VPad.LastRight</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="4772068308290439" type="Function">
+                                    <param id="0" name="Name">&quot;MenuSelect&quot;</param>
+                                    <param id="1" name="Parameter {n}">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6779122092723648">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="3125005000489827" type="VPad">
+                                    <param id="0" name="Instance variable">Down</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">VPad.LastDown</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="7640007335314225" type="Function">
+                                    <param id="0" name="Name">&quot;MenuSelect&quot;</param>
+                                    <param id="1" name="Parameter {n}">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="660878264850284">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="4503769246353106" type="VPad">
+                                    <param id="0" name="Instance variable">Left</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">VPad.LastLeft</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="4837707612071206" type="Function">
+                                    <param id="0" name="Name">&quot;MenuSelect&quot;</param>
+                                    <param id="1" name="Parameter {n}">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="241784578323823">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="4912713479807678" type="VPad">
+                                    <param id="0" name="Instance variable">Up</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">VPad.LastUp</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="42579712605309" type="Function">
+                                    <param id="0" name="Name">&quot;MenuSelect&quot;</param>
+                                    <param id="1" name="Parameter {n}">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7051160159962802">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="2195595818612152" type="MenuItem">
+                                    <param id="0" name="Instance variable">Created</param>
+                                </condition>
+                                <condition id="-11" name="For Each" sid="7868945636165404" type="System">
+                                    <param id="0" name="Object">MenuItem</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="2859038959980401" type="System">
+                                    <param id="0" name="Object to create">DefaultFont</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">MenuItem.X + 32</param>
+                                    <param id="3" name="Y">MenuItem.Y</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="7663994902239934" type="DefaultFont">
+                                    <param id="0" name="Width">512</param>
+                                    <param id="1" name="Height">96</param>
+                                </action>
+                                <action id="2" name="Set scale" sid="6100795265703728" type="DefaultFont">
+                                    <param id="0" name="Scale">2</param>
+                                </action>
+                                <action id="0" name="Set text" sid="3885694580072339" type="DefaultFont">
+                                    <param id="0" name="Text">MenuItem.Text</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="3259282631960121" type="DefaultFont">
+                                    <param id="0" name="Instance variable">Name</param>
+                                    <param id="1" name="Value">&quot;Menu&quot; &amp; MenuItem.ID</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="6160071871745429" type="MenuItem">
+                                    <param id="0" name="Instance variable">Created</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="4459952550089159">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="6476568399148247" type="MenuItem">
+                                            <param id="0" name="Instance variable">Action</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-28" name="Set effect parameter" sid="6030058075119234" type="DefaultFont">
+                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                            <param id="1" name="Parameter index">0</param>
+                                            <param id="2" name="Value">50</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="5748182833587719" type="DefaultFont">
+                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                            <param id="1" name="Parameter index">1</param>
+                                            <param id="2" name="Value">50</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="5671655371911134" type="DefaultFont">
+                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                            <param id="1" name="Parameter index">2</param>
+                                            <param id="2" name="Value">50</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="2235330471124206">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="8221596592820572" type="System">
+                                    <param id="0" name="Object">MenuItem</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="8846094253967087" type="DefaultFont">
+                                    <param id="0" name="Instance variable">Name</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Menu&quot; &amp; MenuItem.ID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="8960724429087305" type="DefaultFont">
+                                    <param id="0" name="X">MenuItem.X + 32</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="9751887006413896" type="DefaultFont">
+                                    <param id="0" name="Y">MenuItem.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

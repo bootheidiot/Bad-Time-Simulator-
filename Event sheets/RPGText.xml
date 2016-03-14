@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>RPGText</name>
+    <events>
+        <event-group description="" sid="8296376404468187" title="RPGText">
+            <sub-events>
+                <event-block sid="696621310651237">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="8469163216815554" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="9960523751992423" type="RPGText">
+                            <param id="0" name="Instance variable">T</param>
+                            <param id="1" name="Value">dt</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4314056516822189">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="2634417579601394" type="RPGText">
+                            <param id="0" name="Instance variable">CurrentChar</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">len(RPGText.FullText)</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="2022022212601419" type="RPGText">
+                            <param id="0" name="Instance variable">T</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">1/30</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="408524020471193" type="RPGText">
+                            <param id="0" name="Instance variable">T</param>
+                            <param id="1" name="Value">1/30</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="8362167824849778" type="RPGText">
+                            <param id="0" name="Instance variable">CurrentChar</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="7518104924206699" type="RPGText">
+                            <param id="0" name="Text">left(RPGText.FullText, RPGText.CurrentChar)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="9250345795727429">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="6705263475186715" type="RPGText">
+                                    <param id="0" name="Instance variable">Voice</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Play (by name)" sid="7355169452177231" type="Audio">
+                                    <param id="0" name="Folder">0</param>
+                                    <param id="1" name="Audio file name">RPGText.Voice</param>
+                                    <param id="3" name="Loop">0</param>
+                                    <param id="4" name="Volume">0</param>
+                                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="6126635417784157">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="968785782013304" type="RPGText">
+                            <param id="0" name="Instance variable">Interactive</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="5240008180931907">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="73458705002315" type="VPad">
+                                    <param id="0" name="Instance variable">Confirm</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">VPad.LastConfirm</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="4918447702662735" type="RPGText">
+                                    <param id="0" name="Instance variable">CurrentChar</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">len(RPGText.FullText)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="7256536697104731" type="RPGText" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="5817292140589924">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="5236349884176463" type="VPad">
+                                    <param id="0" name="Instance variable">Cancel</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">VPad.LastCancel</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="3103315003842606" type="RPGText">
+                                    <param id="0" name="Instance variable">CurrentChar</param>
+                                    <param id="1" name="Value">len(RPGText.FullText)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="2760218144974743" type="RPGText">
+                                    <param id="0" name="Text">RPGText.FullText</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="8328202362150768" type="RPGText">
+                                    <param id="0" name="Instance variable">T</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="3806788914992198">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="3382842543446457" type="RPGText">
+                            <param id="0" name="Instance variable">Interactive</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="5381345791344315" type="RPGText">
+                            <param id="0" name="Instance variable">CurrentChar</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">len(RPGText.FullText)</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="1451065962773302" type="RPGText">
+                            <param id="0" name="Instance variable">Timeout</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="9660525180283579" type="RPGText">
+                            <param id="0" name="Instance variable">Timeout</param>
+                            <param id="1" name="Value">min(dt, RPGText.Timeout)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="9591886275089397">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="5494837275376142" type="RPGText">
+                                    <param id="0" name="Instance variable">Timeout</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="4066830284556114" type="RPGText" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8218860668555562">
+                    <conditions>
+                        <condition id="-19" name="On destroyed" sid="8366693311345256" type="RPGText" />
+                        <condition id="-7" name="Compare instance variable" sid="3443053290518538" type="RPGText">
+                            <param id="0" name="Instance variable">EndFunc</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="6795146118420306" type="Function">
+                            <param id="0" name="Name">RPGText.EndFunc</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9966046875707704">
+                    <conditions>
+                        <condition id="0" name="On function" sid="9245863583993517" type="Function">
+                            <param id="0" name="Name">&quot;SansText&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="5140099445205868" type="System">
+                            <param id="0" name="Object to create">SpeechBubble</param>
+                            <param id="1" name="Layer">&quot;Enemies&quot;</param>
+                            <param id="2" name="X">0</param>
+                            <param id="3" name="Y">0</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="5215295811409118" type="SpeechBubble">
+                            <param id="0" name="X">SansLegs.X + 64</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="521153523069346" type="SpeechBubble">
+                            <param id="0" name="Y">SansLegs.Y - 128</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4187210746447719" type="System">
+                            <param id="0" name="Object to create">SansFont</param>
+                            <param id="1" name="Layer">&quot;Enemies&quot;</param>
+                            <param id="2" name="X">0</param>
+                            <param id="3" name="Y">0</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="532799251136149" type="SansFont">
+                            <param id="0" name="X">SpeechBubble.X + 32</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="2099097229921674" type="SansFont">
+                            <param id="0" name="Y">SpeechBubble.Y + 16</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="7720130521571646" type="SansFont">
+                            <param id="0" name="Width">256</param>
+                        </action>
+                        <action id="-6" name="Set height" sid="146134970176092" type="SansFont">
+                            <param id="0" name="Height">64</param>
+                        </action>
+                        <action id="-28" name="Set effect parameter" sid="4200735038146086" type="SansFont">
+                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                            <param id="1" name="Parameter index">0</param>
+                            <param id="2" name="Value">0</param>
+                        </action>
+                        <action id="-28" name="Set effect parameter" sid="942322139526429" type="SansFont">
+                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                            <param id="1" name="Parameter index">1</param>
+                            <param id="2" name="Value">0</param>
+                        </action>
+                        <action id="-28" name="Set effect parameter" sid="17559158360722" type="SansFont">
+                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                            <param id="1" name="Parameter index">2</param>
+                            <param id="2" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="4926322472318186" type="SansFont">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="9297394273649139" type="SansFont">
+                            <param id="0" name="Instance variable">Voice</param>
+                            <param id="1" name="Value">&quot;SansSpeak&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="3579480278776148" type="SansFont">
+                            <param id="0" name="Instance variable">FullText</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="8663644470251375" type="SansFont">
+                            <param id="0" name="Instance variable">Interactive</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="2408878459908325" type="Function">
+                            <param id="0" name="Name">&quot;TLPause&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="7450123142226868">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="2650531886532879" type="Function">
+                                    <param id="0" name="Index">1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="8413461453554266" type="SansFont">
+                                    <param id="0" name="Instance variable">EndFunc</param>
+                                    <param id="1" name="Value">&quot;EndSansText&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3101331065007093">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="7676177512362368" type="Function">
+                                    <param id="0" name="Index">1</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="2772521790304481" type="SansFont">
+                                    <param id="0" name="Instance variable">EndFunc</param>
+                                    <param id="1" name="Value">Function.Param(1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="9808369736759165">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="6643684039535598" type="SpeechBubble" />
+                        <condition id="-27" inverted="1" name="Effects are supported" sid="4962568159748828" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="6110128284087691" type="SpeechBubble">
+                            <param id="0" name="Animation">&quot;NoEffects&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6860576825530436">
+                    <conditions>
+                        <condition id="0" name="On function" sid="5697007384212404" type="Function">
+                            <param id="0" name="Name">&quot;EndSansText&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="1037245862595152" type="SpeechBubble" />
+                        <action id="0" name="Call function" sid="786833740848337" type="Function">
+                            <param id="0" name="Name">&quot;TLResume&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

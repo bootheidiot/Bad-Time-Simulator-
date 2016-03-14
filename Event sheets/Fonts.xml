@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Fonts</name>
+    <events>
+        <event-block any="1" sid="5834412354404267">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="5276123136482903" type="System" />
+                <condition id="-18" name="On created" sid="5603647828736235" type="BattleFont" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set character width" sid="8299797374752195" type="BattleFont">
+                    <param id="0" name="Character">&quot;!&quot;&quot;#%-/0123456789&lt;=&gt;?ABCDEFGHIJKLNOPQRSTUVXYZ[\]_&quot;</param>
+                    <param id="1" name="Width">5</param>
+                </action>
+                <action id="5" name="Set character width" sid="2197363519653944" type="BattleFont">
+                    <param id="0" name="Character">&quot;&quot;&quot;()&lt;&gt;[]&quot;</param>
+                    <param id="1" name="Width">4</param>
+                </action>
+                <action id="5" name="Set character width" sid="1864998382634315" type="BattleFont">
+                    <param id="0" name="Character">&quot; -&quot;</param>
+                    <param id="1" name="Width">3</param>
+                </action>
+                <action id="5" name="Set character width" sid="6203890301199909" type="BattleFont">
+                    <param id="0" name="Character">&quot;&apos;,.:;&quot;</param>
+                    <param id="1" name="Width">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="4795387788698696">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="4998938932169473" type="System" />
+                <condition id="-18" name="On created" sid="7426065134553322" type="DamageFont" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set character width" sid="9650715589090074" type="DamageFont">
+                    <param id="0" name="Character">&quot;~&quot;</param>
+                    <param id="1" name="Width">29</param>
+                </action>
+                <action id="5" name="Set character width" sid="3767000439903289" type="DamageFont">
+                    <param id="0" name="Character">&quot;&quot;&quot;/&lt;&gt;I^j{}&quot;</param>
+                    <param id="1" name="Width">25</param>
+                </action>
+                <action id="5" name="Set character width" sid="105238651514754" type="DamageFont">
+                    <param id="0" name="Character">&quot;(),1[]`&quot;</param>
+                    <param id="1" name="Width">21</param>
+                </action>
+                <action id="5" name="Set character width" sid="9166024949406787" type="DamageFont">
+                    <param id="0" name="Character">&quot;!&apos;.:;il|&quot;</param>
+                    <param id="1" name="Width">17</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="7395104558464525">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="8764317874175859" type="System" />
+                <condition id="-18" name="On created" sid="1283049899128077" type="DefaultFont" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set character width" sid="9426305873629291" type="DefaultFont">
+                    <param id="0" name="Character">&quot;#%&amp;MWmw~&quot;</param>
+                    <param id="1" name="Width">9</param>
+                </action>
+                <action id="5" name="Set character width" sid="8743203490419181" type="DefaultFont">
+                    <param id="0" name="Character">&quot; $*+-./0123456789=?@ABCDEFGHIJKLNOPQRSTUVXYZ\^abcdefghijklnopqrstuvxyz&quot;</param>
+                    <param id="1" name="Width">8</param>
+                </action>
+                <action id="5" name="Set character width" sid="9617802801173315" type="DefaultFont">
+                    <param id="0" name="Character">&quot;&quot;&quot;&lt;&gt;{}&quot;</param>
+                    <param id="1" name="Width">7</param>
+                </action>
+                <action id="5" name="Set character width" sid="9647746414002747" type="DefaultFont">
+                    <param id="0" name="Character">&quot;!()[]_&quot;</param>
+                    <param id="1" name="Width">6</param>
+                </action>
+                <action id="5" name="Set character width" sid="8426537828249007" type="DefaultFont">
+                    <param id="0" name="Character">&quot;`&quot;</param>
+                    <param id="1" name="Width">5</param>
+                </action>
+                <action id="5" name="Set character width" sid="2731391145283345" type="DefaultFont">
+                    <param id="0" name="Character">&quot;&apos;,:;|&quot;</param>
+                    <param id="1" name="Width">4</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="8349268623442844">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="1716146488598677" type="System" />
+                <condition id="-18" name="On created" sid="6977574469408484" type="SansFont" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set character width" sid="6497336779066987" type="SansFont">
+                    <param id="0" name="Character">&quot;W&quot;</param>
+                    <param id="1" name="Width">15</param>
+                </action>
+                <action id="5" name="Set character width" sid="3373494692421263" type="SansFont">
+                    <param id="0" name="Character">&quot;@&quot;</param>
+                    <param id="1" name="Width">14</param>
+                </action>
+                <action id="5" name="Set character width" sid="9752090473860994" type="SansFont">
+                    <param id="0" name="Character">&quot;%Q&quot;</param>
+                    <param id="1" name="Width">13</param>
+                </action>
+                <action id="5" name="Set character width" sid="5812915078730087" type="SansFont">
+                    <param id="0" name="Character">&quot;MO&quot;</param>
+                    <param id="1" name="Width">12</param>
+                </action>
+                <action id="5" name="Set character width" sid="9963111089279847" type="SansFont">
+                    <param id="0" name="Character">&quot;#&amp;GNVX_&quot;</param>
+                    <param id="1" name="Width">11</param>
+                </action>
+                <action id="5" name="Set character width" sid="9767175346927641" type="SansFont">
+                    <param id="0" name="Character">&quot; $ACHJSTUYZmw&quot;</param>
+                    <param id="1" name="Width">10</param>
+                </action>
+                <action id="5" name="Set character width" sid="8362350019761206" type="SansFont">
+                    <param id="0" name="Character">&quot;247?BDEKdxy~&quot;</param>
+                    <param id="1" name="Width">9</param>
+                </action>
+                <action id="5" name="Set character width" sid="7377273570835338" type="SansFont">
+                    <param id="0" name="Character">&quot;*+/0135689FILR\^abcefghknopqrtuvz&quot;</param>
+                    <param id="1" name="Width">8</param>
+                </action>
+                <action id="5" name="Set character width" sid="7008362902129512" type="SansFont">
+                    <param id="0" name="Character">&quot;-=Pjs{}&quot;</param>
+                    <param id="1" name="Width">7</param>
+                </action>
+                <action id="5" name="Set character width" sid="2734689924066968" type="SansFont">
+                    <param id="0" name="Character">&quot;()&lt;&gt;[]&quot;</param>
+                    <param id="1" name="Width">6</param>
+                </action>
+                <action id="5" name="Set character width" sid="7950590090426261" type="SansFont">
+                    <param id="0" name="Character">&quot;&quot;&quot;;`&quot;</param>
+                    <param id="1" name="Width">5</param>
+                </action>
+                <action id="5" name="Set character width" sid="3742913991759232" type="SansFont">
+                    <param id="0" name="Character">&quot;!&apos;,.:il|&quot;</param>
+                    <param id="1" name="Width">4</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

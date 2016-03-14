@@ -1,0 +1,4 @@
+add gui bones for phase 2
+add sans text after you swing at him?
+add screen shake effect
+document making custom attacks
