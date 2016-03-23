@@ -1359,6 +1359,10 @@
                     <param id="4" name="Volume">0</param>
                     <param id="2" name="Tag (optional)">&quot;&quot;</param>
                 </action>
+                <action id="5" name="Set playback rate" sid="3971380284517386" type="Audio">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                    <param id="1" name="Playback rate">float(Function.Param(1))</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="5100353164401107">
@@ -5132,6 +5136,10 @@
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">0</param>
                             <param id="1" name="Tag (optional)">&quot;GasterBlaster&quot;</param>
+                        </action>
+                        <action id="5" name="Set playback rate" sid="6330413995695288" type="Audio">
+                            <param id="0" name="Tag">&quot;&quot;</param>
+                            <param id="1" name="Playback rate">1.2</param>
                         </action>
                     </actions>
                     <sub-events>

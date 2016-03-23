@@ -10,7 +10,7 @@
 0,HeartMode,0,,,,,,,
 0,SansBody,HandDown,,,,,,,
 0,SansHead,BlueEye,,,,,,,
-0,Sound,GasterBlaster,,,,,,,
+0,Sound,GasterBlaster,1.4,,,,,,
 0.26666,SansSlam,1,,,,,,,
 0.5,SansBody,HandUp,,,,,,,
 0,SansHead,NoEyes,,,,,,,
@@ -18,7 +18,7 @@
 0.7,HeartMode,0,,,,,,,
 0,SansBody,HandRight,,,,,,,
 0,Sound,Ding,,,,,,,
-0.4,Sound,GasterBlaster,,,,,,,
+0.4,Sound,GasterBlaster,1.4,,,,,,
 0.4,SineBones,20,-24,360,25,,,,
 1.1,SansAnimation,,,,,,,,
 0,GasterBlaster,1,0,0,189,246,0,0.333,0.26666
