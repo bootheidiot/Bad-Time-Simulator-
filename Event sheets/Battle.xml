@@ -2900,10 +2900,10 @@
         </event-group>
         <event-group description="" sid="6451037740410459" title="PlayerMovement">
             <sub-events>
-                <variable constant="1" name="HEART_SPEED" sid="1915279441809349" static="0" type="number">150</variable>
                 <variable constant="1" name="HEART_GRAVITY" sid="5736367099838918" static="0" type="number">450</variable>
                 <variable constant="1" name="HEART_JUMP_STRENGTH" sid="9477825447959367" static="0" type="number">240</variable>
                 <variable constant="1" name="HEART_JUMPHOLD_CUTOFF" sid="7658838381136613" static="0" type="number">30</variable>
+                <variable constant="0" name="HeartSpeed" sid="1915279441809349" static="0" type="number">150</variable>
                 <variable constant="0" name="MaxFallSpeed" sid="963626393445968" static="1" type="number">750</variable>
                 <event-block sid="4519603591679642">
                     <conditions>
@@ -3498,6 +3498,36 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="1229121055144974">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="5258290644733366" type="VPad">
+                            <param id="0" name="Instance variable">Cancel</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2978380243308504" type="System">
+                            <param id="0" name="Variable">HeartSpeed</param>
+                            <param id="1" name="Value">150</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1526006386750515">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6400750740507076" type="VPad">
+                            <param id="0" name="Instance variable">Cancel</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="1978759350826462" type="System">
+                            <param id="0" name="Variable">HeartSpeed</param>
+                            <param id="1" name="Value">75</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="701617408993545">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="8118502814546265" type="PlayerHeart">
@@ -3544,7 +3574,7 @@
                                     <actions>
                                         <action behavior="CustomMovement" id="2" name="Set speed" sid="464440241329487" type="PlayerHeart">
                                             <param id="0" name="Which">2</param>
-                                            <param id="1" name="Speed">-HEART_SPEED</param>
+                                            <param id="1" name="Speed">-HEARTSPEED</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -3559,7 +3589,7 @@
                                     <actions>
                                         <action behavior="CustomMovement" id="2" name="Set speed" sid="6158313719839607" type="PlayerHeart">
                                             <param id="0" name="Which">2</param>
-                                            <param id="1" name="Speed">HEART_SPEED</param>
+                                            <param id="1" name="Speed">HEARTSPEED</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -3601,7 +3631,7 @@
                                     <actions>
                                         <action behavior="CustomMovement" id="2" name="Set speed" sid="8992959987159648" type="PlayerHeart">
                                             <param id="0" name="Which">1</param>
-                                            <param id="1" name="Speed">-HEART_SPEED</param>
+                                            <param id="1" name="Speed">-HEARTSPEED</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -3616,7 +3646,7 @@
                                     <actions>
                                         <action behavior="CustomMovement" id="2" name="Set speed" sid="4942206811190521" type="PlayerHeart">
                                             <param id="0" name="Which">1</param>
-                                            <param id="1" name="Speed">HEART_SPEED</param>
+                                            <param id="1" name="Speed">HEARTSPEED</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -3812,7 +3842,7 @@
                                             <actions>
                                                 <action behavior="CustomMovement" id="2" name="Set speed" sid="5736971532976749" type="PlayerHeart">
                                                     <param id="0" name="Which">2</param>
-                                                    <param id="1" name="Speed">PlayerHeart.CustomMovement.dy - HEART_SPEED</param>
+                                                    <param id="1" name="Speed">PlayerHeart.CustomMovement.dy - HEARTSPEED</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -3827,7 +3857,7 @@
                                             <actions>
                                                 <action behavior="CustomMovement" id="2" name="Set speed" sid="6158255050406937" type="PlayerHeart">
                                                     <param id="0" name="Which">2</param>
-                                                    <param id="1" name="Speed">PlayerHeart.CustomMovement.dy + HEART_SPEED</param>
+                                                    <param id="1" name="Speed">PlayerHeart.CustomMovement.dy + HEARTSPEED</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -3954,7 +3984,7 @@
                                             <actions>
                                                 <action behavior="CustomMovement" id="2" name="Set speed" sid="9627335578014524" type="PlayerHeart">
                                                     <param id="0" name="Which">1</param>
-                                                    <param id="1" name="Speed">PlayerHeart.CustomMovement.dx - HEART_SPEED</param>
+                                                    <param id="1" name="Speed">PlayerHeart.CustomMovement.dx - HEARTSPEED</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -3969,7 +3999,7 @@
                                             <actions>
                                                 <action behavior="CustomMovement" id="2" name="Set speed" sid="2508461606821695" type="PlayerHeart">
                                                     <param id="0" name="Which">1</param>
-                                                    <param id="1" name="Speed">PlayerHeart.CustomMovement.dx + HEART_SPEED</param>
+                                                    <param id="1" name="Speed">PlayerHeart.CustomMovement.dx + HEARTSPEED</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -6939,7 +6969,7 @@
         </event-group>
         <event-group description="" sid="643035177198997" title="PlayerDamage">
             <sub-events>
-                <variable constant="0" name="LastDamageTime" sid="9910897188057685" static="0" type="number">0</variable>
+                <variable constant="0" name="LastDamageTime" sid="9910897188057685" static="1" type="number">0</variable>
                 <event-block sid="6538539831904817">
                     <conditions>
                         <condition id="0" name="On function" sid="1793763511666456" type="Function">
