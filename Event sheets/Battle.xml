@@ -5519,6 +5519,9 @@
                                 <action id="6" name="Stop" sid="6080608424724769" type="Audio">
                                     <param id="0" name="Tag">&quot;GasterBlast&quot;</param>
                                 </action>
+                                <action id="6" name="Stop" sid="862009595167511" type="Audio">
+                                    <param id="0" name="Tag">&quot;GasterBlast2&quot;</param>
+                                </action>
                                 <action id="0" name="Play" sid="3009617997729409" type="Audio">
                                     <param id="0" name="Audio file">GasterBlast</param>
                                     <param id="2" name="Loop">0</param>
@@ -5526,6 +5529,16 @@
                                     <param id="1" name="Tag (optional)">&quot;GasterBlast&quot;</param>
                                 </action>
                                 <action id="5" name="Set playback rate" sid="6759438315639086" type="Audio">
+                                    <param id="0" name="Tag">&quot;&quot;</param>
+                                    <param id="1" name="Playback rate">1.2</param>
+                                </action>
+                                <action id="0" name="Play" sid="9817974725864405" type="Audio">
+                                    <param id="0" name="Audio file">GasterBlast2</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;GasterBlast2&quot;</param>
+                                </action>
+                                <action id="5" name="Set playback rate" sid="2703179175507274" type="Audio">
                                     <param id="0" name="Tag">&quot;&quot;</param>
                                     <param id="1" name="Playback rate">1.2</param>
                                 </action>
