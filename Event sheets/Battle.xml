@@ -1359,11 +1359,24 @@
                     <param id="4" name="Volume">0</param>
                     <param id="2" name="Tag (optional)">&quot;&quot;</param>
                 </action>
-                <action id="5" name="Set playback rate" sid="3971380284517386" type="Audio">
-                    <param id="0" name="Tag">&quot;&quot;</param>
-                    <param id="1" name="Playback rate">float(Function.Param(1))</param>
-                </action>
             </actions>
+            <sub-events>
+                <event-block sid="3932998756502551">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="2106028122650942" type="Function">
+                            <param id="0" name="Index">1</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set playback rate" sid="3971380284517386" type="Audio">
+                            <param id="0" name="Tag">&quot;&quot;</param>
+                            <param id="1" name="Playback rate">float(Function.Param(1))</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="5100353164401107">
             <conditions>
