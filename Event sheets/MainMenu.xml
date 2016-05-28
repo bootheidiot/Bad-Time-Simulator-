@@ -534,6 +534,113 @@
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <variable constant="0" name="FirstStart" sid="9570519099240379" static="1" type="number">1</variable>
+                                <event-block sid="6664513252215855">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="4646122072848713" type="System">
+                                            <param id="0" name="Variable">FirstStart</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="2686144668273752" type="System">
+                                            <param id="0" name="Variable">FirstStart</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="1419878553554108">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="9775557357179387" type="System">
+                                                    <param id="0" name="First value">Browser.QueryParam(&quot;mode&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;normal&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="7856715718170849" type="System">
+                                                    <param id="0" name="Variable">SimulatorMode</param>
+                                                    <param id="1" name="Value">MODE_NORMAL</param>
+                                                </action>
+                                                <action id="-2" name="Go to layout" sid="2250937489427595" type="System">
+                                                    <param id="0" name="Layout">BattleScreen</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="4698512175436133">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="7503384418264523" type="System">
+                                                    <param id="0" name="First value">Browser.QueryParam(&quot;mode&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;endless1&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="2615427988409121" type="System">
+                                                    <param id="0" name="Variable">SimulatorMode</param>
+                                                    <param id="1" name="Value">MODE_ENDLESS</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="3348766332315247" type="System">
+                                                    <param id="0" name="Variable">EndlessStage</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-2" name="Go to layout" sid="7000769931317483" type="System">
+                                                    <param id="0" name="Layout">BattleScreen</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="9073934813284889">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="484871644179359" type="System">
+                                                    <param id="0" name="First value">Browser.QueryParam(&quot;mode&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;endless2&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="6999416949166913" type="System">
+                                                    <param id="0" name="Variable">SimulatorMode</param>
+                                                    <param id="1" name="Value">MODE_ENDLESS</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="474366002640576" type="System">
+                                                    <param id="0" name="Variable">EndlessStage</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-2" name="Go to layout" sid="8062297581304893" type="System">
+                                                    <param id="0" name="Layout">BattleScreen</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="2476943766740757">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="8615747155016074" type="System">
+                                                    <param id="0" name="First value">Browser.QueryParam(&quot;mode&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;single&quot;</param>
+                                                </condition>
+                                                <condition id="3" name="Has key" sid="3953270010473576" type="AttackList">
+                                                    <param id="0" name="Key">Browser.QueryParam(&quot;attack&quot;)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="2855488460274073" type="System">
+                                                    <param id="0" name="Variable">SimulatorMode</param>
+                                                    <param id="1" name="Value">MODE_SINGLE</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="5672583306802497" type="System">
+                                                    <param id="0" name="Variable">SingleAttack</param>
+                                                    <param id="1" name="Value">Browser.QueryParam(&quot;attack&quot;)</param>
+                                                </action>
+                                                <action id="-2" name="Go to layout" sid="9484533986639156" type="System">
+                                                    <param id="0" name="Layout">BattleScreen</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
