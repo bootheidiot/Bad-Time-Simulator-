@@ -675,6 +675,44 @@
                 </instance-variables>
                 <texture />
             </object-type>
+            <object-type name="MenuBoneBottom" sid="761861833921609">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="State" sid="992680048340304" type="number" />
+                    <instance-variable name="Button" sid="5567578753522818" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4025981469830428" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\Documents\Undertale Rip\Sprites\spr_s_boneloop_out_0.png">
+                            <collision-poly>
+                                <point x="0.142857" y="0.0454545" />
+                                <point x="0.857143" y="0.0454545" />
+                                <point x="0.857143" y="0.954545" />
+                                <point x="0.142857" y="0.954545" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="MenuBoneLeft" sid="5246535965326995">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="Timer" sid="7519107776133302" type="number" />
+                    <instance-variable name="Destroy" sid="6433670307252687" type="boolean" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1189648859175843" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="D:\Documents\Undertale Rip\Sprites\spr_s_boneloop_out_0.png">
+                            <collision-poly>
+                                <point x="0.142857" y="0.0454545" />
+                                <point x="0.857143" y="0.0454545" />
+                                <point x="0.857143" y="0.954545" />
+                                <point x="0.142857" y="0.954545" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder name="Timeline">
             <object-type global="1" name="TLActionList" sid="456555951765879">
@@ -916,7 +954,13 @@
         <family name="AttackSprite" plugin-id="Sprite" sid="6631597198329078">
             <members>
                 <member>GasterBlaster</member>
+                <member>MenuBoneBottom</member>
+                <member>MenuBoneLeft</member>
             </members>
+            <instance-variables>
+                <instance-variable name="Damage" sid="1009715326578042" type="number" />
+                <instance-variable name="Karma" sid="1305040970412396" type="number" />
+            </instance-variables>
         </family>
         <family name="AttackTiled" plugin-id="TiledBg" sid="9784977049754561">
             <members>

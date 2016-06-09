@@ -103,6 +103,8 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <Damage>0</Damage>
+                        <Karma>0</Karma>
                         <Ang>0</Ang>
                         <EndX>0</EndX>
                         <EndY>0</EndY>
@@ -824,6 +826,62 @@
                         <z>0</z>
                         <width>16</width>
                         <height>16</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuBoneLeft" uid="55">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <Damage>0</Damage>
+                        <Karma>0</Karma>
+                        <Timer>0</Timer>
+                        <Destroy>false</Destroy>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>592</x>
+                        <y>32</y>
+                        <z>0</z>
+                        <width>14</width>
+                        <height>44</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuBoneBottom" uid="56">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <Damage>0</Damage>
+                        <Karma>0</Karma>
+                        <State>0</State>
+                        <Button>0</Button>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>608</x>
+                        <y>32</y>
+                        <z>0</z>
+                        <width>14</width>
+                        <height>44</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>

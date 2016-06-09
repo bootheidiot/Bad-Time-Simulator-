@@ -280,7 +280,7 @@
                                     <actions>
                                         <action disabled="1" id="-10" name="Set value" sid="4208605593275383" type="SansLegs">
                                             <param id="0" name="Instance variable">HitAttempts</param>
-                                            <param id="1" name="Value">22</param>
+                                            <param id="1" name="Value">16</param>
                                         </action>
                                         <action disabled="1" id="-10" name="Set value" sid="6755981998704707" type="SansLegs">
                                             <param id="0" name="Instance variable">NextAttack</param>
@@ -441,6 +441,10 @@
                     <param id="0" name="Name">&quot;CombatZoneSpeed&quot;</param>
                     <param id="1" name="Parameter {n}">480</param>
                 </action>
+                <action id="0" name="Call function" sid="5058649787402254" type="Function">
+                    <param id="0" name="Name">&quot;HeartMode&quot;</param>
+                    <param id="1" name="Parameter {n}">PlayerHeart.Mode</param>
+                </action>
                 <action id="0" name="Call function" sid="4494466368439508" type="Function">
                     <param id="0" name="Name">&quot;HeartMaxFallSpeed&quot;</param>
                     <param id="1" name="Parameter {n}">750</param>
@@ -483,6 +487,10 @@
                 </action>
                 <action id="0" name="Call function" sid="5783355126868734" type="Function">
                     <param id="0" name="Name">&quot;ResetVars&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="1585471824567264" type="Function">
+                    <param id="0" name="Name">&quot;MenuBonesOff&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
             </actions>
@@ -1316,6 +1324,56 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="8194250317691436">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="516178945305094" type="SansLegs">
+                                    <param id="0" name="Instance variable">HitAttempts</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">13</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="3911861650604649" type="SansLegs">
+                                    <param id="0" name="Instance variable">HitAttempts</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">16</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="4354504672713893" type="SansLegs">
+                                    <param id="0" name="Instance variable">HitAttempts</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">17</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="3738460067809331" type="SansLegs">
+                                    <param id="0" name="Instance variable">HitAttempts</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">22</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="6047132919634249" type="Function">
+                                    <param id="0" name="Name">&quot;MenuBoneLeft&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="174994798942467">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="7058507285453225" type="SansLegs">
+                                    <param id="0" name="Instance variable">HitAttempts</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">15</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="2711064562360288" type="SansLegs">
+                                    <param id="0" name="Instance variable">HitAttempts</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">22</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="1708587769967988" type="Function">
+                                    <param id="0" name="Name">&quot;MenuBoneBottom&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-block>
             </sub-events>
@@ -1740,6 +1798,7 @@
                             <param id="2" name="X">320</param>
                             <param id="3" name="Y">320</param>
                         </action>
+                        <action id="-24" name="Move to top" sid="3250334883889174" type="MenuBoneLeft" />
                     </actions>
                     <sub-events>
                         <comment>Lazy again. Just Sans.</comment>
@@ -5729,6 +5788,345 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="6787425766297465" title="MenuBones">
+            <sub-events>
+                <variable constant="0" name="BottomBones" sid="9909730646709937" static="1" type="number">0</variable>
+                <variable constant="0" name="BottomBoneTimer" sid="2101703704976127" static="1" type="number">0</variable>
+                <variable constant="0" name="BottomBoneAlternate" sid="9606556173175612" static="1" type="number">0</variable>
+                <event-block sid="1524699358515961">
+                    <conditions>
+                        <condition id="0" name="On function" sid="3260428070072786" type="Function">
+                            <param id="0" name="Name">&quot;MenuBonesOff&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="2547283341792006" type="MenuBoneLeft">
+                            <param id="0" name="Instance variable">Destroy</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8296348287965188" type="System">
+                            <param id="0" name="Variable">BottomBones</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6027212922507375">
+                    <conditions>
+                        <condition id="0" name="On function" sid="8648115497030825" type="Function">
+                            <param id="0" name="Name">&quot;MenuBoneLeft&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7983893881520992" type="System">
+                            <param id="0" name="Object to create">MenuBoneLeft</param>
+                            <param id="1" name="Layer">&quot;CombatZone&quot;</param>
+                            <param id="2" name="X">-10</param>
+                            <param id="3" name="Y">270</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8224056418517312" type="MenuBoneLeft">
+                            <param id="0" name="Instance variable">Damage</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1304563435875326">
+                    <conditions>
+                        <condition id="0" name="On function" sid="6966543157008351" type="Function">
+                            <param id="0" name="Name">&quot;MenuBoneBottom&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="6336215758346847" type="System">
+                            <param id="0" name="Variable">BottomBones</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="5704799274625452" type="System">
+                            <param id="0" name="Variable">BottomBoneTimer</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9549479429566423" type="System">
+                            <param id="0" name="Variable">BottomBoneAlternate</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1244150053346782">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="7327507191190074" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="1590731161524127" type="MenuBoneLeft">
+                            <param id="0" name="Instance variable">Timer</param>
+                            <param id="1" name="Value">dt</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="9611831941945107" type="MenuBoneLeft">
+                            <param id="0" name="X">-30 + abs(sin(600*self.Timer/pi))*105</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6959282898600845">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="8388229330867978" type="MenuBoneLeft">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">64</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="7798573221366565" type="MenuBoneLeft">
+                            <param id="0" name="Instance variable">Timer</param>
+                            <param id="1" name="Value">dt*0.72</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="761203234264403">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="6926810728277473" type="MenuBoneLeft">
+                            <param id="0" name="Instance variable">Destroy</param>
+                        </condition>
+                        <condition id="-1" name="Compare X" sid="4201701422842248" type="MenuBoneLeft">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="X co-ordinate">-8</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="8146145082314541" type="MenuBoneLeft" />
+                    </actions>
+                </event-block>
+                <event-block sid="2631191724952368">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="4327013774613964" type="System">
+                            <param id="0" name="Variable">BottomBones</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="6800674342035073" type="System">
+                            <param id="0" name="Variable">BottomBoneTimer</param>
+                            <param id="1" name="Value">dt</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8862033881827157">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1693510165502654" type="System">
+                                    <param id="0" name="Variable">BottomBoneTimer</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">0.6</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="6131406413898467" type="System">
+                                    <param id="0" name="Variable">BottomBoneTimer</param>
+                                    <param id="1" name="Value">0.6</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="2965630122074297">
+                                    <conditions>
+                                        <condition id="-1" name="Every tick" sid="9146411182654963" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="8053414733988241" type="System">
+                                            <param id="0" name="Object to create">MenuBoneBottom</param>
+                                            <param id="1" name="Layer">&quot;CombatZone&quot;</param>
+                                            <param id="2" name="X">0</param>
+                                            <param id="3" name="Y">LayoutHeight</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="3030307659837008" type="MenuBoneBottom">
+                                            <param id="0" name="Instance variable">Damage</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="8068044741609472" type="MenuBoneBottom">
+                                            <param id="0" name="Instance variable">Button</param>
+                                            <param id="1" name="Value">0 + BottomBoneAlternate</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="3836254460286833">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="3500418704679505" type="UIButtons">
+                                                    <param id="0" name="Instance variable">ID</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">MenuBoneBottom.Button</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-1" name="Set X" sid="9978692944789917" type="MenuBoneBottom">
+                                                    <param id="0" name="X">UIButtons.BBoxRight</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="9545819741242389">
+                                    <conditions>
+                                        <condition id="-1" name="Every tick" sid="2837241879327366" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="1085992507948589" type="System">
+                                            <param id="0" name="Object to create">MenuBoneBottom</param>
+                                            <param id="1" name="Layer">&quot;CombatZone&quot;</param>
+                                            <param id="2" name="X">0</param>
+                                            <param id="3" name="Y">LayoutHeight</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="9051686628527372" type="MenuBoneBottom">
+                                            <param id="0" name="Instance variable">Damage</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="8674600451055565" type="MenuBoneBottom">
+                                            <param id="0" name="Instance variable">Button</param>
+                                            <param id="1" name="Value">2 + BottomBoneAlternate</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="9425231169514075">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="7780501400170002" type="UIButtons">
+                                                    <param id="0" name="Instance variable">ID</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">MenuBoneBottom.Button</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-1" name="Set X" sid="2208617704789096" type="MenuBoneBottom">
+                                                    <param id="0" name="X">UIButtons.BBoxRight</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="4671189475830525">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="8975478842129828" type="System">
+                                            <param id="0" name="Variable">BottomBoneAlternate</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="5043129334982446" type="System">
+                                            <param id="0" name="Variable">BottomBoneAlternate</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="8477233208553018">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="5492714767170548" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="7817792214383908" type="System">
+                                            <param id="0" name="Variable">BottomBoneAlternate</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="5896323666357314">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="9421352968463758" type="MenuBoneBottom">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="3245990873972808" type="MenuBoneBottom">
+                            <param id="0" name="Y">Self.Y - 300*dt</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="309608023603553">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="1795937577468815" type="MenuBoneBottom">
+                                    <param id="0" name="Comparison">3</param>
+                                    <param id="1" name="Y co-ordinate">440</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Set Y" sid="9348746876111773" type="MenuBoneBottom">
+                                    <param id="0" name="Y">440</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="8891407594263872" type="MenuBoneBottom">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8627521089641379">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7656432745895088" type="MenuBoneBottom">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="6530105182171334" type="MenuBoneBottom">
+                            <param id="0" name="X">Self.X - 150*dt</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="2273708934010512">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="1352140000598205" type="System">
+                                    <param id="0" name="Object">MenuBoneBottom</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="2187750820510814" type="UIButtons">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">MenuBoneBottom.Button</param>
+                                </condition>
+                                <condition id="-1" name="Compare X" sid="845382217823097" type="MenuBoneBottom">
+                                    <param id="0" name="Comparison">3</param>
+                                    <param id="1" name="X co-ordinate">UIButtons.BBoxLeft - 14</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="8178191939738451" type="MenuBoneBottom">
+                                    <param id="0" name="X">UIButtons.BBoxLeft - 14</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="6142133452533904" type="MenuBoneBottom">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="3108236516319589">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="5682528329720289" type="MenuBoneBottom">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="6952969021128685" type="MenuBoneBottom">
+                            <param id="0" name="Y">Self.Y + 300*dt</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4542016451242249">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="3332742192396933" type="MenuBoneBottom">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="2131072312897306" type="MenuBoneBottom" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="5205752066196878" title="CombatZone">
             <sub-events>
                 <variable constant="0" name="ResizeSpeed" sid="3111584688851152" static="1" type="number">480</variable>
@@ -7074,6 +7472,90 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <event-block sid="5726679394208632">
+                            <conditions>
+                                <condition id="-36" name="Pick overlapping point" sid="2487167129589046" type="System">
+                                    <param id="0" name="Object">AttackSprite</param>
+                                    <param id="1" name="X">PlayerHeart.X</param>
+                                    <param id="2" name="Y">PlayerHeart.Y</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="6689891578961013" type="AttackSprite">
+                                    <param id="0" name="Instance variable">Damage</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="4006224713849922" type="PlayerHeart" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="6403201443095863" type="Function">
+                                    <param id="0" name="Name">&quot;DamagePlayer&quot;</param>
+                                    <param id="1" name="Parameter {n}">AttackSprite.Damage{###}AttackSprite.Karma</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="2589765181695327">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="7299891480861778" type="AttackSprite">
+                                            <param id="0" name="Instance variable">Karma</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="1609846567063642" type="AttackSprite">
+                                            <param id="0" name="Instance variable">Karma</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1504611877828037">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="8089634938713708" type="MenuBoneLeft">
+                                            <param id="0" name="Unique ID">AttackSprite.UID</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="5603520751565233" type="System">
+                                            <param id="0" name="First value">MenuBoneLeft.PickedCount</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="6723234037979145" type="System">
+                                            <param id="0" name="Variable">HP</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="8545346840609998" type="System">
+                                            <param id="0" name="Variable">HP</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="9373988253349059">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="9137885818318459" type="MenuBoneBottom">
+                                            <param id="0" name="Unique ID">AttackSprite.UID</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="1502832072534555" type="System">
+                                            <param id="0" name="First value">MenuBoneBottom.PickedCount</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="4835213302049233" type="System">
+                                            <param id="0" name="Variable">HP</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="1647115571304168" type="System">
+                                            <param id="0" name="Variable">HP</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
                         <event-block sid="3489532580732596">
                             <conditions>
                                 <condition id="-36" name="Pick overlapping point" sid="7421831333213587" type="System">
