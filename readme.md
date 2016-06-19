@@ -13,4 +13,7 @@ Known Issues
 
 Contact
 -------
-If you want to contact me for some reason, send me a private message on [Facepunch](https://facepunch.com/private.php?do=newpm&u=13155).
+If you want to contact me for some reason, you can do so through the following:
+
+- [Facepunch](https://facepunch.com/member.php?u=13155)
+- [Steam](http://steamcommunity.com/id/Jcw87/)
