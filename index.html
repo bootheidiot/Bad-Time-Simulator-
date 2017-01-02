@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title>Bad Time Simulator (Sans Fight)</title>
-	<meta name="description" content="do you wanna have a bad time? 'cause if you visit this page... you are REALLY not going to like what happens next." />
 	
 	<!-- Standardised web app manifest -->
 	<link rel="manifest" href="appmanifest.json" />
@@ -70,8 +69,7 @@
 			<br/><br/><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx">Microsoft Internet Explorer</a><br/>
 			<a href="http://www.mozilla.com/firefox/">Mozilla Firefox</a><br/>
 			<a href="http://www.google.com/chrome/">Google Chrome</a><br/>
-			<a href="http://www.apple.com/safari/download/">Apple Safari</a><br/>
-			<a href="http://www.google.com/chromeframe">Google Chrome Frame for Internet Explorer</a><br/></h1>
+			<a href="http://www.apple.com/safari/download/">Apple Safari</a></h1>
 		</canvas>
 		
 	</div>
@@ -108,28 +106,31 @@
 		document.addEventListener("webkitvisibilitychange", onVisibilityChanged, false);
 		document.addEventListener("msvisibilitychange", onVisibilityChanged, false);
 		
-		if (navigator.serviceWorker && navigator.serviceWorker.register)
+		function OnRegisterSWError(e)
 		{
-			// Register an empty service worker to trigger web app install banners.
-			navigator.serviceWorker.register("sw.js", { scope: "./" });
-		}
+			console.warn("Failed to register service worker: ", e);
+		};
+		
+		// Runtime calls this global method when ready to start caching (i.e. after startup).
+		// This registers the service worker which caches resources for offline support.
+		window.C2_RegisterSW = function C2_RegisterSW()
+		{
+			if (!navigator.serviceWorker)
+				return;		// no SW support, ignore call
+			
+			try {
+				navigator.serviceWorker.register("sw.js", { scope: "./" })
+				.then(function (reg)
+				{
+					console.log("Registered service worker on " + reg.scope);
+				})
+				.catch(OnRegisterSWError);
+			}
+			catch (e)
+			{
+				OnRegisterSWError(e);
+			}
+		};
     </script>
-	<script>
-		(function (i, s, o, g, r, a, m) {
-			i['GoogleAnalyticsObject'] = r;
-			i[r] = i[r] || function () {
-				(i[r].q = i[r].q || []).push(arguments)
-			},
-			i[r].l = 1 * new Date();
-			a = s.createElement(o),
-			m = s.getElementsByTagName(o)[0];
-			a.async = 1;
-			a.src = g;
-			m.parentNode.insertBefore(a, m)
-		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-		ga('create', 'UA-78361109-1', 'auto');
-		ga('send', 'pageview');
-	</script>
 </body> 
 </html> 
