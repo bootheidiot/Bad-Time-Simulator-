@@ -316,7 +316,7 @@
                                     <param id="0" name="Key">90 (Z)</param>
                                 </condition>
                                 <condition id="2" name="Key is down" sid="5599487570691262" type="Keyboard">
-                                    <param id="0" name="Key">32 (Space)</param>
+                                    <param id="0" name="Key">13 (Return)</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -348,7 +348,7 @@
                                     <param id="0" name="Key">67 (C)</param>
                                 </condition>
                                 <condition id="2" name="Key is down" sid="596894329683083" type="Keyboard">
-                                    <param id="0" name="Key">13 (Return)</param>
+                                    <param id="0" name="Key">17 (Ctrl)</param>
                                 </condition>
                             </conditions>
                             <actions>

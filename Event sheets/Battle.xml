@@ -3176,6 +3176,10 @@
                                             <param id="0" name="Within">0.5</param>
                                             <param id="1" name="Angle">0</param>
                                         </condition>
+                                        <condition id="-1" name="Compare X" sid="867314195452469" type="Platform1">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="X co-ordinate">PlayerHeart.X</param>
+                                        </condition>
                                         <condition id="-8" name="Compare two values" sid="3784182056193712" type="System">
                                             <param id="0" name="First value">PlayerHeart.CustomMovement.dx</param>
                                             <param id="1" name="Comparison">5</param>
@@ -3198,6 +3202,10 @@
                                         <condition id="-11" name="Is within angle" sid="4253006755465429" type="PlayerHeart">
                                             <param id="0" name="Within">0.5</param>
                                             <param id="1" name="Angle">90</param>
+                                        </condition>
+                                        <condition id="-2" name="Compare Y" sid="432417104473420" type="Platform1">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="Y co-ordinate">PlayerHeart.Y</param>
                                         </condition>
                                         <condition id="-8" name="Compare two values" sid="5079046125486197" type="System">
                                             <param id="0" name="First value">PlayerHeart.CustomMovement.dy</param>
@@ -3222,6 +3230,10 @@
                                             <param id="0" name="Within">0.5</param>
                                             <param id="1" name="Angle">180</param>
                                         </condition>
+                                        <condition id="-1" name="Compare X" sid="622289574536881" type="Platform1">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="X co-ordinate">PlayerHeart.X</param>
+                                        </condition>
                                         <condition id="-8" name="Compare two values" sid="9975307930205958" type="System">
                                             <param id="0" name="First value">PlayerHeart.CustomMovement.dx</param>
                                             <param id="1" name="Comparison">3</param>
@@ -3244,6 +3256,10 @@
                                         <condition id="-11" name="Is within angle" sid="3079885609166868" type="PlayerHeart">
                                             <param id="0" name="Within">0.5</param>
                                             <param id="1" name="Angle">270</param>
+                                        </condition>
+                                        <condition id="-2" name="Compare Y" sid="973394053811111" type="Platform1">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="Y co-ordinate">PlayerHeart.Y</param>
                                         </condition>
                                         <condition id="-8" name="Compare two values" sid="7110746590958389" type="System">
                                             <param id="0" name="First value">PlayerHeart.CustomMovement.dy</param>
@@ -3965,8 +3981,8 @@
                                     <conditions>
                                         <condition id="9" name="Is overlapping at offset" sid="9645474015641874" type="PlayerHeart">
                                             <param id="0" name="Object">Platform1</param>
-                                            <param id="1" name="Offset X">X*0.2</param>
-                                            <param id="2" name="Offset Y">Y*0.2</param>
+                                            <param id="1" name="Offset X">X*0.5</param>
+                                            <param id="2" name="Offset Y">Y*0.5</param>
                                         </condition>
                                     </conditions>
                                     <actions />
