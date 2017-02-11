@@ -1,10 +1,9 @@
 ﻿{
-	"version": 1483392649,
+	"version": 1486854388,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
 		"jquery-2.1.1.min.js",
-		"offlineClient.js",
 		"images/vpad-sheet0.png",
 		"images/hpbackground.png",
 		"images/hpbar.png",
