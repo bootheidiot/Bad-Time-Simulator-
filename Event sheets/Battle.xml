@@ -1698,58 +1698,47 @@
                     <actions />
                     <sub-events>
                         <comment>Be lazy, just Sans</comment>
+                        <variable constant="0" name="Action" sid="238050275334109" static="0" type="text"></variable>
+                        <event-block sid="3703493294161426">
+                            <conditions>
+                                <condition id="0" name="Compare at X" sid="5160012966306435" type="MenuStack">
+                                    <param id="0" name="X">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">UIFight.ID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="897009482070971" type="System">
+                                    <param id="0" name="Variable">Action</param>
+                                    <param id="1" name="Value">&quot;MenuFightEnemy&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3268391952200651">
+                            <conditions>
+                                <condition id="0" name="Compare at X" sid="6672921142832583" type="MenuStack">
+                                    <param id="0" name="X">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">UIAct.ID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="524167510604667" type="System">
+                                    <param id="0" name="Variable">Action</param>
+                                    <param id="1" name="Value">&quot;MenuActEnemy&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="7444677021855717">
                             <conditions>
                                 <condition id="-1" name="Every tick" sid="7312213966211142" type="System" />
                             </conditions>
                             <actions>
-                                <action id="-3" name="Create object" sid="1117557376547316" type="System">
-                                    <param id="0" name="Object to create">MenuItem</param>
-                                    <param id="1" name="Layer">&quot;CombatZone&quot;</param>
-                                    <param id="2" name="X">64</param>
-                                    <param id="3" name="Y">272</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="5615602195198026" type="MenuItem">
-                                    <param id="0" name="Instance variable">ID</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="2134332350409278" type="MenuItem">
-                                    <param id="0" name="Instance variable">Text</param>
-                                    <param id="1" name="Value">&quot;* Sans&quot;</param>
+                                <action id="0" name="Call function" sid="818540111613540" type="Function">
+                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;CombatZone&quot;{###}64{###}272{###}0{###}&quot;* Sans&quot;{###}Action</param>
                                 </action>
                             </actions>
-                            <sub-events>
-                                <event-block sid="3703493294161426">
-                                    <conditions>
-                                        <condition id="0" name="Compare at X" sid="5160012966306435" type="MenuStack">
-                                            <param id="0" name="X">0</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">UIFight.ID</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-10" name="Set value" sid="5424754431502718" type="MenuItem">
-                                            <param id="0" name="Instance variable">Action</param>
-                                            <param id="1" name="Value">&quot;MenuFightEnemy&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="3268391952200651">
-                                    <conditions>
-                                        <condition id="0" name="Compare at X" sid="6672921142832583" type="MenuStack">
-                                            <param id="0" name="X">0</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">UIAct.ID</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-10" name="Set value" sid="1427424468924857" type="MenuItem">
-                                            <param id="0" name="Instance variable">Action</param>
-                                            <param id="1" name="Value">&quot;MenuActEnemy&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -1844,110 +1833,6 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="7051818317091061">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="3781874006009849" type="TargetChoice">
-                            <param id="0" name="Instance variable">Direction</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                        <condition id="-1" name="Compare X" sid="2727812874846617" type="TargetChoice">
-                            <param id="0" name="Comparison">4</param>
-                            <param id="1" name="X co-ordinate">CombatZone.BBoxRight</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="7132492899965348" type="TargetChoice" />
-                        <action id="-10" name="Set value" sid="5070626853507707" type="Target">
-                            <param id="0" name="Instance variable">State</param>
-                            <param id="1" name="Value">2</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="4333049570660826" type="System">
-                            <param id="0" name="Object to create">DamageFont</param>
-                            <param id="1" name="Layer">&quot;Enemies&quot;</param>
-                            <param id="2" name="X">272</param>
-                            <param id="3" name="Y">76</param>
-                        </action>
-                        <action id="0" name="Set text" sid="8054308759858593" type="DamageFont">
-                            <param id="0" name="Text">&quot;MISS&quot;</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="3849853044523412" type="DamageFont">
-                            <param id="0" name="Instance variable">Timeout</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-28" name="Set effect parameter" sid="5385909024181278" type="DamageFont">
-                            <param id="0" name="Effect">&quot;Tint&quot;</param>
-                            <param id="1" name="Parameter index">0</param>
-                            <param id="2" name="Value">75</param>
-                        </action>
-                        <action id="-28" name="Set effect parameter" sid="8988484607743672" type="DamageFont">
-                            <param id="0" name="Effect">&quot;Tint&quot;</param>
-                            <param id="1" name="Parameter index">1</param>
-                            <param id="2" name="Value">75</param>
-                        </action>
-                        <action id="-28" name="Set effect parameter" sid="5259100110167526" type="DamageFont">
-                            <param id="0" name="Effect">&quot;Tint&quot;</param>
-                            <param id="1" name="Parameter index">2</param>
-                            <param id="2" name="Value">75</param>
-                        </action>
-                        <action id="0" name="Call function" sid="9564045043535074" type="Function">
-                            <param id="0" name="Name">&quot;StartAttack&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="9441420734207613">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="287623577799614" type="TargetChoice">
-                            <param id="0" name="Instance variable">Direction</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">2</param>
-                        </condition>
-                        <condition id="-1" name="Compare X" sid="7259131711117052" type="TargetChoice">
-                            <param id="0" name="Comparison">2</param>
-                            <param id="1" name="X co-ordinate">CombatZone.BBoxLeft</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="9706703264785084" type="TargetChoice" />
-                        <action id="-10" name="Set value" sid="8497970520091358" type="Target">
-                            <param id="0" name="Instance variable">State</param>
-                            <param id="1" name="Value">2</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="2334877850460002" type="System">
-                            <param id="0" name="Object to create">DamageFont</param>
-                            <param id="1" name="Layer">&quot;Enemies&quot;</param>
-                            <param id="2" name="X">272</param>
-                            <param id="3" name="Y">76</param>
-                        </action>
-                        <action id="0" name="Set text" sid="7042778576973567" type="DamageFont">
-                            <param id="0" name="Text">&quot;MISS&quot;</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="6137173581093592" type="DamageFont">
-                            <param id="0" name="Instance variable">Timeout</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-28" name="Set effect parameter" sid="6206359133040834" type="DamageFont">
-                            <param id="0" name="Effect">&quot;Tint&quot;</param>
-                            <param id="1" name="Parameter index">0</param>
-                            <param id="2" name="Value">75</param>
-                        </action>
-                        <action id="-28" name="Set effect parameter" sid="1233054758990541" type="DamageFont">
-                            <param id="0" name="Effect">&quot;Tint&quot;</param>
-                            <param id="1" name="Parameter index">1</param>
-                            <param id="2" name="Value">75</param>
-                        </action>
-                        <action id="-28" name="Set effect parameter" sid="6220368380105728" type="DamageFont">
-                            <param id="0" name="Effect">&quot;Tint&quot;</param>
-                            <param id="1" name="Parameter index">2</param>
-                            <param id="2" name="Value">75</param>
-                        </action>
-                        <action id="0" name="Call function" sid="645567994106001" type="Function">
-                            <param id="0" name="Name">&quot;StartAttack&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="3725343884561161">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="201332726797952" type="Target">
@@ -1962,8 +1847,114 @@
                         </action>
                     </actions>
                     <sub-events>
+                        <event-block sid="7051818317091061">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="3781874006009849" type="TargetChoice">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-1" name="Compare X" sid="2727812874846617" type="TargetChoice">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">CombatZone.BBoxRight</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="7132492899965348" type="TargetChoice" />
+                                <action id="-10" name="Set value" sid="5070626853507707" type="Target">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="4333049570660826" type="System">
+                                    <param id="0" name="Object to create">DamageFont</param>
+                                    <param id="1" name="Layer">&quot;Enemies&quot;</param>
+                                    <param id="2" name="X">272</param>
+                                    <param id="3" name="Y">76</param>
+                                </action>
+                                <action id="0" name="Set text" sid="8054308759858593" type="DamageFont">
+                                    <param id="0" name="Text">&quot;MISS&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="3849853044523412" type="DamageFont">
+                                    <param id="0" name="Instance variable">Timeout</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="5385909024181278" type="DamageFont">
+                                    <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                    <param id="1" name="Parameter index">0</param>
+                                    <param id="2" name="Value">75</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="8988484607743672" type="DamageFont">
+                                    <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                    <param id="1" name="Parameter index">1</param>
+                                    <param id="2" name="Value">75</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="5259100110167526" type="DamageFont">
+                                    <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                    <param id="1" name="Parameter index">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </action>
+                                <action id="0" name="Call function" sid="9564045043535074" type="Function">
+                                    <param id="0" name="Name">&quot;StartAttack&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9441420734207613">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="780970255271250" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="287623577799614" type="TargetChoice">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-1" name="Compare X" sid="7259131711117052" type="TargetChoice">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">CombatZone.BBoxLeft</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="9706703264785084" type="TargetChoice" />
+                                <action id="-10" name="Set value" sid="8497970520091358" type="Target">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="2334877850460002" type="System">
+                                    <param id="0" name="Object to create">DamageFont</param>
+                                    <param id="1" name="Layer">&quot;Enemies&quot;</param>
+                                    <param id="2" name="X">272</param>
+                                    <param id="3" name="Y">76</param>
+                                </action>
+                                <action id="0" name="Set text" sid="7042778576973567" type="DamageFont">
+                                    <param id="0" name="Text">&quot;MISS&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="6137173581093592" type="DamageFont">
+                                    <param id="0" name="Instance variable">Timeout</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="6206359133040834" type="DamageFont">
+                                    <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                    <param id="1" name="Parameter index">0</param>
+                                    <param id="2" name="Value">75</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="1233054758990541" type="DamageFont">
+                                    <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                    <param id="1" name="Parameter index">1</param>
+                                    <param id="2" name="Value">75</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="6220368380105728" type="DamageFont">
+                                    <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                    <param id="1" name="Parameter index">2</param>
+                                    <param id="2" name="Value">75</param>
+                                </action>
+                                <action id="0" name="Call function" sid="645567994106001" type="Function">
+                                    <param id="0" name="Name">&quot;StartAttack&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="4112656876844759">
                             <conditions>
+                                <condition id="-22" name="Else" sid="254183015047013" type="System" />
                                 <condition id="-7" name="Compare instance variable" sid="3949978678550207" type="VPad">
                                     <param id="0" name="Instance variable">Confirm</param>
                                     <param id="1" name="Comparison">4</param>
@@ -2087,23 +2078,9 @@
                             <param id="0" name="Variable">MenuState</param>
                             <param id="1" name="Value">3</param>
                         </action>
-                        <action id="-3" name="Create object" sid="7707036530178629" type="System">
-                            <param id="0" name="Object to create">MenuItem</param>
-                            <param id="1" name="Layer">&quot;CombatZone&quot;</param>
-                            <param id="2" name="X">64</param>
-                            <param id="3" name="Y">272</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="1313703524938795" type="MenuItem">
-                            <param id="0" name="Instance variable">ID</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="8490633914138166" type="MenuItem">
-                            <param id="0" name="Instance variable">Text</param>
-                            <param id="1" name="Value">&quot;* Check&quot;</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="6792042049813371" type="MenuItem">
-                            <param id="0" name="Instance variable">Action</param>
-                            <param id="1" name="Value">&quot;MenuCheckSans&quot;</param>
+                        <action id="0" name="Call function" sid="250405060356076" type="Function">
+                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;CombatZone&quot;{###}64{###}272{###}0{###}&quot;* Check&quot;{###}&quot;MenuCheckSans&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -2223,6 +2200,9 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <variable constant="0" name="X" sid="831689070335536" static="0" type="number">0</variable>
+                        <variable constant="0" name="Y" sid="243059583337533" static="0" type="number">0</variable>
+                        <variable constant="0" name="Text" sid="785327950664429" static="0" type="text"></variable>
                         <event-block sid="691393088852222">
                             <conditions>
                                 <condition id="7" name="Compare size" sid="514578272185741" type="PlayerItems">
@@ -2278,29 +2258,21 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-3" name="Create object" sid="6115994504757512" type="System">
-                                    <param id="0" name="Object to create">MenuItem</param>
-                                    <param id="1" name="Layer">&quot;CombatZone&quot;</param>
-                                    <param id="2" name="X">0</param>
-                                    <param id="3" name="Y">0</param>
+                                <action id="-9" name="Set value" sid="457263215673719" type="System">
+                                    <param id="0" name="Variable">X</param>
+                                    <param id="1" name="Value">64 + (loopindex%2)*256</param>
                                 </action>
-                                <action id="-1" name="Set X" sid="1361595831346313" type="MenuItem">
-                                    <param id="0" name="X">64 + (loopindex%2)*256</param>
+                                <action id="-9" name="Set value" sid="235055641832448" type="System">
+                                    <param id="0" name="Variable">Y</param>
+                                    <param id="1" name="Value">272 + floor(loopindex/2)*32</param>
                                 </action>
-                                <action id="-2" name="Set Y" sid="1792221626278734" type="MenuItem">
-                                    <param id="0" name="Y">272 + floor(loopindex/2)*32</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="6557224700698773" type="MenuItem">
-                                    <param id="0" name="Instance variable">ID</param>
-                                    <param id="1" name="Value">loopindex</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="4077183100681902" type="MenuItem">
-                                    <param id="0" name="Instance variable">Text</param>
+                                <action id="-9" name="Set value" sid="986254003597480" type="System">
+                                    <param id="0" name="Variable">Text</param>
                                     <param id="1" name="Value">&quot;* &quot; &amp; ItemDB.At(PlayerItems.At(loopindex), 3)</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="728771140469258" type="MenuItem">
-                                    <param id="0" name="Instance variable">Action</param>
-                                    <param id="1" name="Value">&quot;MenuUseItem&quot;</param>
+                                <action id="0" name="Call function" sid="123728439530942" type="Function">
+                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;CombatZone&quot;{###}X{###}Y{###}loopindex{###}Text{###}&quot;MenuUseItem&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -2318,29 +2290,21 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-3" name="Create object" sid="9327249839556227" type="System">
-                                    <param id="0" name="Object to create">MenuItem</param>
-                                    <param id="1" name="Layer">&quot;CombatZone&quot;</param>
-                                    <param id="2" name="X">0</param>
-                                    <param id="3" name="Y">0</param>
+                                <action id="-9" name="Set value" sid="799596495344293" type="System">
+                                    <param id="0" name="Variable">X</param>
+                                    <param id="1" name="Value">640 + 64 + (loopindex%2)*256</param>
                                 </action>
-                                <action id="-1" name="Set X" sid="8959944268765671" type="MenuItem">
-                                    <param id="0" name="X">640 + 64 + (loopindex%2)*256</param>
+                                <action id="-9" name="Set value" sid="707227502595257" type="System">
+                                    <param id="0" name="Variable">Y</param>
+                                    <param id="1" name="Value">272 + floor(loopindex/2)*32</param>
                                 </action>
-                                <action id="-2" name="Set Y" sid="901297905210851" type="MenuItem">
-                                    <param id="0" name="Y">272 + floor(loopindex/2)*32</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="7868976397144483" type="MenuItem">
-                                    <param id="0" name="Instance variable">ID</param>
-                                    <param id="1" name="Value">loopindex+4</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="3711239285883236" type="MenuItem">
-                                    <param id="0" name="Instance variable">Text</param>
+                                <action id="-9" name="Set value" sid="792974765153701" type="System">
+                                    <param id="0" name="Variable">Text</param>
                                     <param id="1" name="Value">&quot;* &quot; &amp; ItemDB.At(PlayerItems.At(loopindex+4), 3)</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="5950512798033936" type="MenuItem">
-                                    <param id="0" name="Instance variable">Action</param>
-                                    <param id="1" name="Value">&quot;MenuUseItem&quot;</param>
+                                <action id="0" name="Call function" sid="888139108766780" type="Function">
+                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;CombatZone&quot;{###}X{###}Y{###}loopindex+4{###}Text{###}&quot;MenuUseItem&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -2460,23 +2424,9 @@
                             <param id="0" name="Variable">MenuState</param>
                             <param id="1" name="Value">3</param>
                         </action>
-                        <action id="-3" name="Create object" sid="5241322387996817" type="System">
-                            <param id="0" name="Object to create">MenuItem</param>
-                            <param id="1" name="Layer">&quot;CombatZone&quot;</param>
-                            <param id="2" name="X">64</param>
-                            <param id="3" name="Y">272</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="7863440388409247" type="MenuItem">
-                            <param id="0" name="Instance variable">ID</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="8315035293681215" type="MenuItem">
-                            <param id="0" name="Instance variable">Text</param>
-                            <param id="1" name="Value">&quot;* Spare&quot;</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="7621084436638559" type="MenuItem">
-                            <param id="0" name="Instance variable">Action</param>
-                            <param id="1" name="Value">&quot;MenuSpare&quot;</param>
+                        <action id="0" name="Call function" sid="986631449476559" type="Function">
+                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;CombatZone&quot;{###}64{###}272{###}0{###}&quot;* Spare&quot;{###}&quot;MenuSpare&quot;</param>
                         </action>
                     </actions>
                 </event-block>

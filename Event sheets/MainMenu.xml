@@ -42,77 +42,21 @@
                         <action id="7" name="Set horizontal alignment" sid="6681899051898119" type="DefaultFont">
                             <param id="0" name="Horizontal alignment">1</param>
                         </action>
-                        <action id="-3" name="Create object" sid="9039036319764347" type="System">
-                            <param id="0" name="Object to create">MenuItem</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="X">192</param>
-                            <param id="3" name="Y">96</param>
+                        <action id="0" name="Call function" sid="121948490218354" type="Function">
+                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                            <param id="1" name="Parameter {n}">0{###}192{###}96{###}0{###}&quot;Normal&quot;{###}&quot;MenuModeNormal&quot;</param>
                         </action>
-                        <action id="-10" name="Set value" sid="4699911754372146" type="MenuItem">
-                            <param id="0" name="Instance variable">ID</param>
-                            <param id="1" name="Value">0</param>
+                        <action id="0" name="Call function" sid="304790185942551" type="Function">
+                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                            <param id="1" name="Parameter {n}">0{###}192{###}128{###}1{###}&quot;Endless&quot;{###}&quot;MenuModeEndless&quot;</param>
                         </action>
-                        <action id="-10" name="Set value" sid="5097286040292023" type="MenuItem">
-                            <param id="0" name="Instance variable">Text</param>
-                            <param id="1" name="Value">&quot;Normal&quot;</param>
+                        <action id="0" name="Call function" sid="326311762535984" type="Function">
+                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                            <param id="1" name="Parameter {n}">0{###}192{###}160{###}2{###}&quot;Single attack&quot;{###}&quot;MenuModeSingle&quot;</param>
                         </action>
-                        <action id="-10" name="Set value" sid="7204006134218889" type="MenuItem">
-                            <param id="0" name="Instance variable">Action</param>
-                            <param id="1" name="Value">&quot;MenuModeNormal&quot;</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="7089069820943051" type="System">
-                            <param id="0" name="Object to create">MenuItem</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="X">192</param>
-                            <param id="3" name="Y">128</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="2016995682037028" type="MenuItem">
-                            <param id="0" name="Instance variable">ID</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="2247858362687389" type="MenuItem">
-                            <param id="0" name="Instance variable">Text</param>
-                            <param id="1" name="Value">&quot;Endless&quot;</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="14204195622577" type="MenuItem">
-                            <param id="0" name="Instance variable">Action</param>
-                            <param id="1" name="Value">&quot;MenuModeEndless&quot;</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="1873924215511801" type="System">
-                            <param id="0" name="Object to create">MenuItem</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="X">192</param>
-                            <param id="3" name="Y">160</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="6644581560301445" type="MenuItem">
-                            <param id="0" name="Instance variable">ID</param>
-                            <param id="1" name="Value">2</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="1295957827793451" type="MenuItem">
-                            <param id="0" name="Instance variable">Text</param>
-                            <param id="1" name="Value">&quot;Single attack&quot;</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="7507260452535228" type="MenuItem">
-                            <param id="0" name="Instance variable">Action</param>
-                            <param id="1" name="Value">&quot;MenuModeSingle&quot;</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="6970034246663134" type="System">
-                            <param id="0" name="Object to create">MenuItem</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="X">192</param>
-                            <param id="3" name="Y">192</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="8843321238002583" type="MenuItem">
-                            <param id="0" name="Instance variable">ID</param>
-                            <param id="1" name="Value">3</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="4614392730476459" type="MenuItem">
-                            <param id="0" name="Instance variable">Text</param>
-                            <param id="1" name="Value">&quot;Custom attack&quot;</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="2863582279695183" type="MenuItem">
-                            <param id="0" name="Instance variable">Action</param>
-                            <param id="1" name="Value">&quot;MenuModeCustom&quot;</param>
+                        <action id="0" name="Call function" sid="516406951993025" type="Function">
+                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                            <param id="1" name="Parameter {n}">0{###}192{###}192{###}3{###}&quot;Custom attack&quot;{###}&quot;MenuModeCustom&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -160,23 +104,9 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-3" name="Create object" sid="1665443447236265" type="System">
-                                    <param id="0" name="Object to create">MenuItem</param>
-                                    <param id="1" name="Layer">0</param>
-                                    <param id="2" name="X">192</param>
-                                    <param id="3" name="Y">96 + loopindex*32</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="6922986782858012" type="MenuItem">
-                                    <param id="0" name="Instance variable">ID</param>
-                                    <param id="1" name="Value">loopindex</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="8480220882994354" type="MenuItem">
-                                    <param id="0" name="Instance variable">Text</param>
-                                    <param id="1" name="Value">&quot;Phase &quot; &amp; (loopindex + 1)</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="9045969532246061" type="MenuItem">
-                                    <param id="0" name="Instance variable">Action</param>
-                                    <param id="1" name="Value">&quot;MenuEndless&quot;</param>
+                                <action id="0" name="Call function" sid="158277619791938" type="Function">
+                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">0{###}192{###}96 + loopindex*32{###}loopindex{###}&quot;Phase &quot; &amp; (loopindex + 1){###}&quot;MenuEndless&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -245,23 +175,9 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-3" name="Create object" sid="3442901947437575" type="System">
-                                    <param id="0" name="Object to create">MenuItem</param>
-                                    <param id="1" name="Layer">0</param>
-                                    <param id="2" name="X">192</param>
-                                    <param id="3" name="Y">96 + loopindex*32</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="6407142990249372" type="MenuItem">
-                                    <param id="0" name="Instance variable">ID</param>
-                                    <param id="1" name="Value">loopindex</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="2933555576513283" type="MenuItem">
-                                    <param id="0" name="Instance variable">Text</param>
-                                    <param id="1" name="Value">AttackLoader.At(loopindex)</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="9408923503387577" type="MenuItem">
-                                    <param id="0" name="Instance variable">Action</param>
-                                    <param id="1" name="Value">&quot;MenuSingleAttack&quot;</param>
+                                <action id="0" name="Call function" sid="307989349234234" type="Function">
+                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">0{###}192{###}96 + loopindex*32{###}loopindex{###}AttackLoader.At(loopindex){###}&quot;MenuSingleAttack&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -320,54 +236,17 @@
                             <param id="0" name="Variable">SimulatorMode</param>
                             <param id="1" name="Value">MODE_SINGLE</param>
                         </action>
-                        <action id="-3" name="Create object" sid="7924417795969943" type="System">
-                            <param id="0" name="Object to create">MenuItem</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="X">192</param>
-                            <param id="3" name="Y">96</param>
+                        <action id="0" name="Call function" sid="131065348070977" type="Function">
+                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                            <param id="1" name="Parameter {n}">0{###}192{###}96{###}0{###}&quot;Documentation&quot;{###}&quot;&quot;</param>
                         </action>
-                        <action id="-10" name="Set value" sid="31150182182398" type="MenuItem">
-                            <param id="0" name="Instance variable">ID</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="785271433102018" type="MenuItem">
-                            <param id="0" name="Instance variable">Text</param>
-                            <param id="1" name="Value">&quot;Documentation&quot;</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="6462140382559119" type="System">
-                            <param id="0" name="Object to create">MenuItem</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="X">192</param>
-                            <param id="3" name="Y">128</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="5066047979485293" type="MenuItem">
-                            <param id="0" name="Instance variable">ID</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="488662508832082" type="MenuItem">
-                            <param id="0" name="Instance variable">Text</param>
-                            <param id="1" name="Value">&quot;Load file&quot;</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="4212178681726291" type="MenuItem">
-                            <param id="0" name="Instance variable">Action</param>
-                            <param id="1" name="Value">&quot;MenuCustomSelect&quot;</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="832979349115946" type="System">
-                            <param id="0" name="Object to create">MenuItem</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="X">192</param>
-                            <param id="3" name="Y">160</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="1168233622426693" type="MenuItem">
-                            <param id="0" name="Instance variable">ID</param>
-                            <param id="1" name="Value">2</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="7472816112121239" type="MenuItem">
-                            <param id="0" name="Instance variable">Text</param>
-                            <param id="1" name="Value">&quot;Run attack&quot;</param>
+                        <action id="0" name="Call function" sid="363254892081796" type="Function">
+                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                            <param id="1" name="Parameter {n}">0{###}192{###}128{###}1{###}&quot;Load file&quot;{###}&quot;MenuCustomSelect&quot;</param>
                         </action>
                     </actions>
                     <sub-events>
+                        <variable constant="0" name="Action" sid="750606889767726" static="0" type="text"></variable>
                         <event-block sid="5556763763617329">
                             <conditions>
                                 <condition id="3" name="Has key" sid="3443274778672137" type="AttackList">
@@ -375,9 +254,20 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="7376407208012257" type="MenuItem">
-                                    <param id="0" name="Instance variable">Action</param>
+                                <action id="-9" name="Set value" sid="679614942751458" type="System">
+                                    <param id="0" name="Variable">Action</param>
                                     <param id="1" name="Value">&quot;MenuCustomRun&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="933808084676421">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="678880668806750" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="133977934621254" type="Function">
+                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">0{###}192{###}160{###}2{###}&quot;Run attack&quot;{###}Action</param>
                                 </action>
                             </actions>
                         </event-block>

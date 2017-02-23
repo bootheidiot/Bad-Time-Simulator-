@@ -289,6 +289,10 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="14" name="Log" sid="435889489248309" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;MenuConfirm on tick &quot; &amp; tickcount</param>
+                                </action>
                                 <action id="5" name="Push" sid="1536698611713637" type="MenuStack">
                                     <param id="0" name="Where">0</param>
                                     <param id="1" name="Value">0</param>
@@ -308,6 +312,7 @@
                         </event-block>
                         <event-block sid="4734399919399368">
                             <conditions>
+                                <condition id="-22" name="Else" sid="308674648687820" type="System" />
                                 <condition id="-7" name="Compare instance variable" sid="4808674276307461" type="VPad">
                                     <param id="0" name="Instance variable">Cancel</param>
                                     <param id="1" name="Comparison">4</param>
@@ -320,7 +325,12 @@
                                     <param id="3" name="Value">&quot;&quot;</param>
                                 </condition>
                             </conditions>
-                            <actions />
+                            <actions>
+                                <action id="14" name="Log" sid="154371849874513" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;MenuBack on tick &quot; &amp; tickcount</param>
+                                </action>
+                            </actions>
                             <sub-events>
                                 <variable constant="0" name="FuncName" sid="7156101104530386" static="0" type="text"></variable>
                                 <event-block sid="8656451840730673">
@@ -352,6 +362,7 @@
                         </event-block>
                         <event-block sid="3623176702869784">
                             <conditions>
+                                <condition id="-22" name="Else" sid="287766461887018" type="System" />
                                 <condition id="-7" name="Compare instance variable" sid="898589353683862" type="VPad">
                                     <param id="0" name="Instance variable">Right</param>
                                     <param id="1" name="Comparison">4</param>
@@ -367,6 +378,7 @@
                         </event-block>
                         <event-block sid="6779122092723648">
                             <conditions>
+                                <condition id="-22" name="Else" sid="794848382564229" type="System" />
                                 <condition id="-7" name="Compare instance variable" sid="3125005000489827" type="VPad">
                                     <param id="0" name="Instance variable">Down</param>
                                     <param id="1" name="Comparison">4</param>
@@ -382,6 +394,7 @@
                         </event-block>
                         <event-block sid="660878264850284">
                             <conditions>
+                                <condition id="-22" name="Else" sid="951370061259571" type="System" />
                                 <condition id="-7" name="Compare instance variable" sid="4503769246353106" type="VPad">
                                     <param id="0" name="Instance variable">Left</param>
                                     <param id="1" name="Comparison">4</param>
@@ -397,6 +410,7 @@
                         </event-block>
                         <event-block sid="241784578323823">
                             <conditions>
+                                <condition id="-22" name="Else" sid="115749243633628" type="System" />
                                 <condition id="-7" name="Compare instance variable" sid="4912713479807678" type="VPad">
                                     <param id="0" name="Instance variable">Up</param>
                                     <param id="1" name="Comparison">4</param>
@@ -409,70 +423,6 @@
                                     <param id="1" name="Parameter {n}">3</param>
                                 </action>
                             </actions>
-                        </event-block>
-                        <event-block sid="7051160159962802">
-                            <conditions>
-                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="2195595818612152" type="MenuItem">
-                                    <param id="0" name="Instance variable">Created</param>
-                                </condition>
-                                <condition id="-11" name="For Each" sid="7868945636165404" type="System">
-                                    <param id="0" name="Object">MenuItem</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-3" name="Create object" sid="2859038959980401" type="System">
-                                    <param id="0" name="Object to create">DefaultFont</param>
-                                    <param id="1" name="Layer">0</param>
-                                    <param id="2" name="X">MenuItem.X + 32</param>
-                                    <param id="3" name="Y">MenuItem.Y</param>
-                                </action>
-                                <action id="-7" name="Set size" sid="7663994902239934" type="DefaultFont">
-                                    <param id="0" name="Width">512</param>
-                                    <param id="1" name="Height">96</param>
-                                </action>
-                                <action id="2" name="Set scale" sid="6100795265703728" type="DefaultFont">
-                                    <param id="0" name="Scale">2</param>
-                                </action>
-                                <action id="0" name="Set text" sid="3885694580072339" type="DefaultFont">
-                                    <param id="0" name="Text">MenuItem.Text</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="3259282631960121" type="DefaultFont">
-                                    <param id="0" name="Instance variable">Name</param>
-                                    <param id="1" name="Value">&quot;Menu&quot; &amp; MenuItem.ID</param>
-                                </action>
-                                <action id="-13" name="Set boolean" sid="6160071871745429" type="MenuItem">
-                                    <param id="0" name="Instance variable">Created</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                            <sub-events>
-                                <event-block sid="4459952550089159">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="6476568399148247" type="MenuItem">
-                                            <param id="0" name="Instance variable">Action</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">&quot;&quot;</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-28" name="Set effect parameter" sid="6030058075119234" type="DefaultFont">
-                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
-                                            <param id="1" name="Parameter index">0</param>
-                                            <param id="2" name="Value">50</param>
-                                        </action>
-                                        <action id="-28" name="Set effect parameter" sid="5748182833587719" type="DefaultFont">
-                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
-                                            <param id="1" name="Parameter index">1</param>
-                                            <param id="2" name="Value">50</param>
-                                        </action>
-                                        <action id="-28" name="Set effect parameter" sid="5671655371911134" type="DefaultFont">
-                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
-                                            <param id="1" name="Parameter index">2</param>
-                                            <param id="2" name="Value">50</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
                         </event-block>
                         <event-block sid="2235330471124206">
                             <conditions>
@@ -491,6 +441,84 @@
                                 </action>
                                 <action id="-2" name="Set Y" sid="9751887006413896" type="DefaultFont">
                                     <param id="0" name="Y">MenuItem.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="198398755542197">
+                    <conditions>
+                        <condition id="0" name="On function" sid="766090744744271" type="Function">
+                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="248654370483502" type="System">
+                            <param id="0" name="Object to create">MenuItem</param>
+                            <param id="1" name="Layer">Function.Param(0)</param>
+                            <param id="2" name="X">Function.Param(1)</param>
+                            <param id="3" name="Y">Function.Param(2)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="295255653641432" type="MenuItem">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Value">Function.Param(3)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="266107689626120" type="MenuItem">
+                            <param id="0" name="Instance variable">Text</param>
+                            <param id="1" name="Value">Function.Param(4)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="596023311969026" type="MenuItem">
+                            <param id="0" name="Instance variable">Action</param>
+                            <param id="1" name="Value">Function.Param(5)</param>
+                        </action>
+                        <action id="1" name="Set return value" sid="511741908287164" type="Function">
+                            <param id="0" name="Value">MenuItem.UID</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="593416691206548" type="System">
+                            <param id="0" name="Object to create">DefaultFont</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">MenuItem.X + 32</param>
+                            <param id="3" name="Y">MenuItem.Y</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="405916427729181" type="DefaultFont">
+                            <param id="0" name="Width">512</param>
+                            <param id="1" name="Height">96</param>
+                        </action>
+                        <action id="2" name="Set scale" sid="161240728466197" type="DefaultFont">
+                            <param id="0" name="Scale">2</param>
+                        </action>
+                        <action id="0" name="Set text" sid="300716580761740" type="DefaultFont">
+                            <param id="0" name="Text">MenuItem.Text</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="994902184646253" type="DefaultFont">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Value">&quot;Menu&quot; &amp; MenuItem.ID</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4459952550089159">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="6476568399148247" type="MenuItem">
+                                    <param id="0" name="Instance variable">Action</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-28" name="Set effect parameter" sid="6030058075119234" type="DefaultFont">
+                                    <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                    <param id="1" name="Parameter index">0</param>
+                                    <param id="2" name="Value">50</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="5748182833587719" type="DefaultFont">
+                                    <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                    <param id="1" name="Parameter index">1</param>
+                                    <param id="2" name="Value">50</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="5671655371911134" type="DefaultFont">
+                                    <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                    <param id="1" name="Parameter index">2</param>
+                                    <param id="2" name="Value">50</param>
                                 </action>
                             </actions>
                         </event-block>
