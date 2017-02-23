@@ -154,6 +154,14 @@
                                     <param id="0" name="Instance variable">HitAttempts</param>
                                     <param id="1" name="Value">15</param>
                                 </action>
+                                <action id="0" name="Call function" sid="931292737815473" type="Function">
+                                    <param id="0" name="Name">&quot;SansHead&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Default&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="600556706130093" type="Function">
+                                    <param id="0" name="Name">&quot;SansAnimation&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Idle&quot;</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
