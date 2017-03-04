@@ -360,6 +360,444 @@
                         </event-block>
                     </sub-events>
                 </event-group>
+                <event-group description="" sid="726194741738483" title="Touch">
+                    <sub-events>
+                        <event-block sid="795051598369363">
+                            <conditions>
+                                <condition id="-20" name="Is on mobile device" sid="804541384717717" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="MobileWarned" sid="567741314908991" static="1" type="number">0</variable>
+                                <event-block sid="236920128668373">
+                                    <conditions>
+                                        <condition id="-2" name="On start of layout" sid="380082553913865" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="370913479255376" type="System">
+                                            <param id="0" name="Object to create">TouchA</param>
+                                            <param id="1" name="Layer">&quot;Touch&quot;</param>
+                                            <param id="2" name="X">592</param>
+                                            <param id="3" name="Y">48</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="530825832723344" type="System">
+                                            <param id="0" name="Object to create">TouchB</param>
+                                            <param id="1" name="Layer">&quot;Touch&quot;</param>
+                                            <param id="2" name="X">480</param>
+                                            <param id="3" name="Y">48</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="667540765836737">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="505437346533428" type="System">
+                                                    <param id="0" name="Variable">MobileWarned</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-3" name="Create object" sid="375818885423135" type="System">
+                                                    <param id="0" name="Object to create">DefaultFont</param>
+                                                    <param id="1" name="Layer">&quot;Touch&quot;</param>
+                                                    <param id="2" name="X">16</param>
+                                                    <param id="3" name="Y">400</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="222893444387848" type="DefaultFont">
+                                                    <param id="0" name="Instance variable">Name</param>
+                                                    <param id="1" name="Value">&quot;MobileWarn&quot;</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="312368363882614" type="DefaultFont">
+                                                    <param id="0" name="Instance variable">Timeout</param>
+                                                    <param id="1" name="Value">3</param>
+                                                </action>
+                                                <action id="-7" name="Set size" sid="327090629639428" type="DefaultFont">
+                                                    <param id="0" name="Width">512</param>
+                                                    <param id="1" name="Height">80</param>
+                                                </action>
+                                                <action id="2" name="Set scale" sid="946531600717532" type="DefaultFont">
+                                                    <param id="0" name="Scale">2</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="989636852540768" type="DefaultFont">
+                                                    <param id="0" name="Text">&quot;Don&apos;t play on mobile!&quot; &amp; newline &amp; &quot;You have been warned!&quot;</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="713870393895474" type="System">
+                                                    <param id="0" name="Variable">MobileWarned</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="280603110395217">
+                                    <conditions>
+                                        <condition id="0" name="On any touch start" sid="453502036546672" type="Touch" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="10" name="Request fullscreen" sid="904088374612251" type="Browser">
+                                            <param id="0" name="Mode">4</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="745134333750571">
+                                    <conditions>
+                                        <condition id="0" name="On any touch start" sid="862379527794763" type="Touch" />
+                                        <condition id="-8" name="Compare two values" sid="651137451437577" type="System">
+                                            <param id="0" name="First value">TouchDPad.Count</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <variable constant="0" name="X" sid="556897614785245" static="0" type="number">0</variable>
+                                        <variable constant="0" name="Y" sid="478425805027930" static="0" type="number">0</variable>
+                                        <variable constant="0" name="StartDPad" sid="959706783019112" static="0" type="number">1</variable>
+                                        <event-block sid="937309899299078">
+                                            <conditions>
+                                                <condition id="-1" name="Every tick" sid="839198326880009" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="469766991599153" type="System">
+                                                    <param id="0" name="Variable">X</param>
+                                                    <param id="1" name="Value">Touch.X(Touch.TouchIndex, &quot;Touch&quot;)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="663637905290338" type="System">
+                                                    <param id="0" name="Variable">Y</param>
+                                                    <param id="1" name="Value">Touch.Y(Touch.TouchIndex, &quot;Touch&quot;)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="893842085849600" type="System">
+                                                    <param id="0" name="Variable">StartDPad</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="856032958932707">
+                                            <conditions>
+                                                <condition id="-36" name="Pick overlapping point" sid="372409729378271" type="System">
+                                                    <param id="0" name="Object">TouchA</param>
+                                                    <param id="1" name="X">X</param>
+                                                    <param id="2" name="Y">Y</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="903377270620000" type="System">
+                                                    <param id="0" name="Variable">StartDPad</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="231552480403004">
+                                            <conditions>
+                                                <condition id="-36" name="Pick overlapping point" sid="955997019374758" type="System">
+                                                    <param id="0" name="Object">TouchB</param>
+                                                    <param id="1" name="X">X</param>
+                                                    <param id="2" name="Y">Y</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="643312090155452" type="System">
+                                                    <param id="0" name="Variable">StartDPad</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="786327277455568">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="444245094889309" type="System">
+                                                    <param id="0" name="Variable">StartDPad</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-3" name="Create object" sid="555072147695984" type="System">
+                                                    <param id="0" name="Object to create">TouchDPad</param>
+                                                    <param id="1" name="Layer">&quot;Touch&quot;</param>
+                                                    <param id="2" name="X">X</param>
+                                                    <param id="3" name="Y">Y</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="797711746427196" type="TouchDPad">
+                                                    <param id="0" name="Instance variable">TouchID</param>
+                                                    <param id="1" name="Value">Touch.TouchID</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="156611426026105">
+                                    <conditions>
+                                        <condition id="3" name="On touched object" sid="131505258518113" type="Touch">
+                                            <param id="0" name="Object">TouchA</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="600728178781912" type="TouchA">
+                                            <param id="0" name="Instance variable">TouchID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="447619448018485" type="TouchA">
+                                            <param id="0" name="Instance variable">TouchID</param>
+                                            <param id="1" name="Value">Touch.TouchID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="262160649453265">
+                                    <conditions>
+                                        <condition id="3" name="On touched object" sid="209901264075008" type="Touch">
+                                            <param id="0" name="Object">TouchB</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="397624656428695" type="TouchB">
+                                            <param id="0" name="Instance variable">TouchID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="408389051827014" type="TouchB">
+                                            <param id="0" name="Instance variable">TouchID</param>
+                                            <param id="1" name="Value">Touch.TouchID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="510145506237579">
+                                    <conditions>
+                                        <condition id="1" name="On any touch end" sid="743999052926286" type="Touch" />
+                                        <condition id="-7" name="Compare instance variable" sid="671198875808570" type="TouchA">
+                                            <param id="0" name="Instance variable">TouchID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Touch.TouchID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="565112206990156" type="TouchA">
+                                            <param id="0" name="Instance variable">TouchID</param>
+                                            <param id="1" name="Value">-1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="854691349928665">
+                                    <conditions>
+                                        <condition id="1" name="On any touch end" sid="651209601277116" type="Touch" />
+                                        <condition id="-7" name="Compare instance variable" sid="442375252565031" type="TouchB">
+                                            <param id="0" name="Instance variable">TouchID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Touch.TouchID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="603323091113707" type="TouchB">
+                                            <param id="0" name="Instance variable">TouchID</param>
+                                            <param id="1" name="Value">-1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="455910532065050">
+                                    <conditions>
+                                        <condition id="1" name="On any touch end" sid="654408151890593" type="Touch" />
+                                        <condition id="-7" name="Compare instance variable" sid="958165339942242" type="TouchDPad">
+                                            <param id="0" name="Instance variable">TouchID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Touch.TouchID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="930891711947960" type="TouchDPad" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="618513189653011">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="347847542826581" type="System">
+                                            <param id="0" name="First value">TouchDPad.Count</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <variable constant="0" name="X" sid="759293089368178" static="0" type="number">0</variable>
+                                        <variable constant="0" name="Y" sid="891678533493877" static="0" type="number">0</variable>
+                                        <variable constant="1" name="TOUCH_ZONE" sid="845876408649566" static="0" type="number">24</variable>
+                                        <event-block sid="610269434621506">
+                                            <conditions>
+                                                <condition id="-1" name="Every tick" sid="682704827463364" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="241295947317404" type="System">
+                                                    <param id="0" name="Variable">X</param>
+                                                    <param id="1" name="Value">Touch.XForID(TouchDPad.TouchID, &quot;Touch&quot;)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="603206603122152" type="System">
+                                                    <param id="0" name="Variable">Y</param>
+                                                    <param id="1" name="Value">Touch.YForID(TouchDPad.TouchID, &quot;Touch&quot;)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="849498678331174">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="149136532260509" type="System">
+                                                    <param id="0" name="First value">Y</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Second value">TouchDPad.Y - TOUCH_ZONE</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="773694582267750" type="VPad">
+                                                    <param id="0" name="Instance variable">Up</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="809499936534555">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="830947680209022" type="System">
+                                                    <param id="0" name="First value">Y</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Second value">TouchDPad.Y + TOUCH_ZONE</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="860432365548781" type="VPad">
+                                                    <param id="0" name="Instance variable">Down</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="833954426944866">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="233135193669790" type="System">
+                                                    <param id="0" name="First value">X</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Second value">TouchDPad.X - TOUCH_ZONE</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="556463825592813" type="VPad">
+                                                    <param id="0" name="Instance variable">Left</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="590163719983862">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="167704999073270" type="System">
+                                                    <param id="0" name="First value">X</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Second value">TouchDPad.X + TOUCH_ZONE</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="883303417801571" type="VPad">
+                                                    <param id="0" name="Instance variable">Right</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="137791190479244">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="569721919845758" type="System">
+                                            <param id="0" name="Object">TouchButton</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <variable constant="0" name="X" sid="926381871953278" static="0" type="number">0</variable>
+                                        <variable constant="0" name="Y" sid="870371977719287" static="0" type="number">0</variable>
+                                        <event-block sid="557329239365404">
+                                            <conditions>
+                                                <condition id="-1" name="Every tick" sid="173663799341533" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="989580943600488" type="System">
+                                                    <param id="0" name="Variable">X</param>
+                                                    <param id="1" name="Value">Touch.XForID(TouchButton.TouchID, &quot;Touch&quot;)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="240099916088793" type="System">
+                                                    <param id="0" name="Variable">Y</param>
+                                                    <param id="1" name="Value">Touch.YForID(TouchButton.TouchID, &quot;Touch&quot;)</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="931511050509179" type="TouchButton">
+                                                    <param id="0" name="Instance variable">Pressed</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="160251371255659">
+                                            <conditions>
+                                                <condition id="-36" name="Pick overlapping point" sid="625346223352958" type="System">
+                                                    <param id="0" name="Object">TouchButton</param>
+                                                    <param id="1" name="X">X</param>
+                                                    <param id="2" name="Y">Y</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="962182570938899" type="TouchButton">
+                                                    <param id="0" name="Instance variable">Pressed</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="139855616301050">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="961696175702950" type="TouchButton">
+                                                    <param id="0" name="Instance variable">Pressed</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="338639669239050" type="TouchButton">
+                                                    <param id="0" name="Animation">&quot;Pressed&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="716865146817964">
+                                            <conditions>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="358330221063880" type="TouchButton">
+                                                    <param id="0" name="Instance variable">Pressed</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="895539042729724" type="TouchButton">
+                                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="161667019401513">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="785150688927401" type="TouchA">
+                                            <param id="0" name="Instance variable">Pressed</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="711878732618324" type="VPad">
+                                            <param id="0" name="Instance variable">Confirm</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="866109962891615">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="119729908214219" type="TouchB">
+                                            <param id="0" name="Instance variable">Pressed</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="461683378764747" type="VPad">
+                                            <param id="0" name="Instance variable">Cancel</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
             </sub-events>
         </event-group>
     </events>

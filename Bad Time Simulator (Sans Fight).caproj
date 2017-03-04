@@ -21,6 +21,7 @@
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
         <plugin author="Scirra" id="filechooser" version="1">File chooser</plugin>
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
     </used-plugins>
@@ -98,6 +99,9 @@
             </object-type>
             <object-type name="Audio" sid="130305442643432">
                 <plugin id="Audio" />
+            </object-type>
+            <object-type name="Touch" sid="833371787328053">
+                <plugin id="Touch" />
             </object-type>
         </object-folder>
         <object-folder name="BattleUI">
@@ -743,6 +747,41 @@
                 <texture original-source="C:\Users\Jcw87\Pictures\UndertaleDamageFont.png" />
             </object-type>
         </object-folder>
+        <object-folder name="TouchUI">
+            <object-type name="TouchA" sid="117524411669736">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="688431823067020" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Pressed" pingpong="0" repeatcount="1" repeatto="0" sid="174733332464142" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="TouchB" sid="428292736598660">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="873294262795378" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Pressed" pingpong="0" repeatcount="1" repeatto="0" sid="642935057171834" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="TouchDPad" sid="293725615020106">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="TouchID" sid="310120484498810" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="539337012850933" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
         <object-type name="PlayerHeart" sid="5960708907117077">
             <plugin id="Sprite" />
             <instance-variables>
@@ -979,6 +1018,16 @@
                 <instance-variable name="Karma" sid="4419610502870706" type="number" />
             </instance-variables>
         </family>
+        <family name="TouchButton" plugin-id="Sprite" sid="902272746554209">
+            <members>
+                <member>TouchA</member>
+                <member>TouchB</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="TouchID" sid="636958093485166" type="number" />
+                <instance-variable name="Pressed" sid="875789127674825" type="boolean" />
+            </instance-variables>
+        </family>
     </families>
     <layout-folder>
         <layout>BattleScreen.xml</layout>
@@ -1021,6 +1070,11 @@
             </properties>
         </global-instance>
         <global-instance type="Browser" uid="54" />
+        <global-instance type="Touch" uid="58">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
     </global-instances>
     <sounds-folder>
         <file name="Ding.ogg" />

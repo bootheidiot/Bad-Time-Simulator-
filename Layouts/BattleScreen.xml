@@ -608,7 +608,7 @@
                         <top-margin>5</top-margin>
                         <bottom-margin>5</bottom-margin>
                         <edges>Stretch</edges>
-                        <fill>Stretch</fill>
+                        <fill>Transparent</fill>
                         <initial-visibility>Invisible</initial-visibility>
                         <hotspot>Top-left</hotspot>
                         <seams>Overlap</seams>
@@ -635,6 +635,24 @@
                     </world>
                 </instance>
             </instances>
+            <effects />
+        </layer>
+        <layer name="Touch" sid="632984773778133">
+            <initially-visible>1</initially-visible>
+            <background-color>0,0,0</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>0</x>
+                <y>0</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances />
             <effects />
         </layer>
     </layers>
