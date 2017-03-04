@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-#1487830605
+#1488604486
 data.js
 c2runtime.js
 jquery-2.1.1.min.js
@@ -41,6 +41,11 @@ images/battlefont.png
 images/sansfont.png
 images/defaultfont.png
 images/damagefont.png
+images/toucha-sheet0.png
+images/toucha-sheet1.png
+images/touchb-sheet0.png
+images/touchb-sheet1.png
+images/touchdpad-sheet0.png
 images/playerheart-sheet0.png
 images/playerheart-sheet1.png
 images/menuitem-sheet0.png

@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1487830605,
+	"version": 1488604486,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -42,6 +42,11 @@
 		"images/sansfont.png",
 		"images/defaultfont.png",
 		"images/damagefont.png",
+		"images/toucha-sheet0.png",
+		"images/toucha-sheet1.png",
+		"images/touchb-sheet0.png",
+		"images/touchb-sheet1.png",
+		"images/touchdpad-sheet0.png",
 		"images/playerheart-sheet0.png",
 		"images/playerheart-sheet1.png",
 		"images/menuitem-sheet0.png",
