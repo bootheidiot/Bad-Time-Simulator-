@@ -450,6 +450,8 @@
                                     </conditions>
                                     <actions />
                                     <sub-events>
+                                        <variable constant="0" name="CanvasX" sid="200913029347146" static="0" type="number">0</variable>
+                                        <variable constant="0" name="CanvasY" sid="278201514538128" static="0" type="number">0</variable>
                                         <variable constant="0" name="X" sid="556897614785245" static="0" type="number">0</variable>
                                         <variable constant="0" name="Y" sid="478425805027930" static="0" type="number">0</variable>
                                         <variable constant="0" name="StartDPad" sid="959706783019112" static="0" type="number">1</variable>
@@ -459,12 +461,20 @@
                                             </conditions>
                                             <actions>
                                                 <action id="-9" name="Set value" sid="469766991599153" type="System">
-                                                    <param id="0" name="Variable">X</param>
-                                                    <param id="1" name="Value">Touch.X(Touch.TouchIndex, &quot;Touch&quot;)</param>
+                                                    <param id="0" name="Variable">CanvasX</param>
+                                                    <param id="1" name="Value">Touch.AbsoluteXForID(Touch.TouchID)</param>
                                                 </action>
                                                 <action id="-9" name="Set value" sid="663637905290338" type="System">
+                                                    <param id="0" name="Variable">CanvasY</param>
+                                                    <param id="1" name="Value">Touch.AbsoluteYForID(Touch.TouchID)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="268494791391574" type="System">
+                                                    <param id="0" name="Variable">X</param>
+                                                    <param id="1" name="Value">CanvasToLayerX(&quot;Touch&quot;, CanvasX, CanvasY)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="579266858650583" type="System">
                                                     <param id="0" name="Variable">Y</param>
-                                                    <param id="1" name="Value">Touch.Y(Touch.TouchIndex, &quot;Touch&quot;)</param>
+                                                    <param id="1" name="Value">CanvasToLayerY(&quot;Touch&quot;, CanvasX, CanvasY)</param>
                                                 </action>
                                                 <action id="-9" name="Set value" sid="893842085849600" type="System">
                                                     <param id="0" name="Variable">StartDPad</param>
@@ -616,6 +626,8 @@
                                     </conditions>
                                     <actions />
                                     <sub-events>
+                                        <variable constant="0" name="CanvasX" sid="677585580385193" static="0" type="number">0</variable>
+                                        <variable constant="0" name="CanvasY" sid="921640891091010" static="0" type="number">0</variable>
                                         <variable constant="0" name="X" sid="759293089368178" static="0" type="number">0</variable>
                                         <variable constant="0" name="Y" sid="891678533493877" static="0" type="number">0</variable>
                                         <variable constant="1" name="TOUCH_ZONE" sid="845876408649566" static="0" type="number">24</variable>
@@ -625,12 +637,20 @@
                                             </conditions>
                                             <actions>
                                                 <action id="-9" name="Set value" sid="241295947317404" type="System">
-                                                    <param id="0" name="Variable">X</param>
-                                                    <param id="1" name="Value">Touch.XForID(TouchDPad.TouchID, &quot;Touch&quot;)</param>
+                                                    <param id="0" name="Variable">CanvasX</param>
+                                                    <param id="1" name="Value">Touch.AbsoluteXForID(TouchDPad.TouchID)</param>
                                                 </action>
                                                 <action id="-9" name="Set value" sid="603206603122152" type="System">
+                                                    <param id="0" name="Variable">CanvasY</param>
+                                                    <param id="1" name="Value">Touch.AbsoluteYForID(TouchDPad.TouchID)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="431857125261668" type="System">
+                                                    <param id="0" name="Variable">X</param>
+                                                    <param id="1" name="Value">CanvasToLayerX(&quot;Touch&quot;, CanvasX, CanvasY)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="112872418539731" type="System">
                                                     <param id="0" name="Variable">Y</param>
-                                                    <param id="1" name="Value">Touch.YForID(TouchDPad.TouchID, &quot;Touch&quot;)</param>
+                                                    <param id="1" name="Value">CanvasToLayerY(&quot;Touch&quot;, CanvasX, CanvasY)</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -704,6 +724,8 @@
                                     </conditions>
                                     <actions />
                                     <sub-events>
+                                        <variable constant="0" name="CanvasX" sid="225156230173404" static="0" type="number">0</variable>
+                                        <variable constant="0" name="CanvasY" sid="246582234589773" static="0" type="number">0</variable>
                                         <variable constant="0" name="X" sid="926381871953278" static="0" type="number">0</variable>
                                         <variable constant="0" name="Y" sid="870371977719287" static="0" type="number">0</variable>
                                         <event-block sid="557329239365404">
@@ -711,13 +733,21 @@
                                                 <condition id="-1" name="Every tick" sid="173663799341533" type="System" />
                                             </conditions>
                                             <actions>
-                                                <action id="-9" name="Set value" sid="989580943600488" type="System">
-                                                    <param id="0" name="Variable">X</param>
-                                                    <param id="1" name="Value">Touch.XForID(TouchButton.TouchID, &quot;Touch&quot;)</param>
+                                                <action id="-9" name="Set value" sid="126163555432130" type="System">
+                                                    <param id="0" name="Variable">CanvasX</param>
+                                                    <param id="1" name="Value">Touch.AbsoluteXForID(TouchButton.TouchID)</param>
                                                 </action>
-                                                <action id="-9" name="Set value" sid="240099916088793" type="System">
+                                                <action id="-9" name="Set value" sid="730704860160591" type="System">
+                                                    <param id="0" name="Variable">CanvasY</param>
+                                                    <param id="1" name="Value">Touch.AbsoluteYForID(TouchButton.TouchID)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="667242117862749" type="System">
+                                                    <param id="0" name="Variable">X</param>
+                                                    <param id="1" name="Value">CanvasToLayerX(&quot;Touch&quot;, CanvasX, CanvasY)</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="984069909766498" type="System">
                                                     <param id="0" name="Variable">Y</param>
-                                                    <param id="1" name="Value">Touch.YForID(TouchButton.TouchID, &quot;Touch&quot;)</param>
+                                                    <param id="1" name="Value">CanvasToLayerY(&quot;Touch&quot;, CanvasX, CanvasY)</param>
                                                 </action>
                                                 <action id="-13" name="Set boolean" sid="931511050509179" type="TouchButton">
                                                     <param id="0" name="Instance variable">Pressed</param>
