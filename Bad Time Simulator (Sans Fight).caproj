@@ -8,7 +8,7 @@
     <author-website>http://</author-website>
     <app-id>com.jcw87.badtime</app-id>
     <unique-id>3pln6vqtdnxgu</unique-id>
-    <saved-with-version>23900</saved-with-version>
+    <saved-with-version>24400</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
@@ -787,6 +787,7 @@
             <instance-variables>
                 <instance-variable name="Mode" sid="6313592074891908" type="number" />
                 <instance-variable name="Slammed" sid="4448468745440906" type="boolean" />
+                <instance-variable name="SlamDamage" sid="122041775148508" type="boolean" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="CustomMovement" sid="8958058217944609">

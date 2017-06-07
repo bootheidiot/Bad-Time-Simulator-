@@ -457,6 +457,10 @@
                     <param id="0" name="Name">&quot;HeartMaxFallSpeed&quot;</param>
                     <param id="1" name="Parameter {n}">750</param>
                 </action>
+                <action id="0" name="Call function" sid="956878677840635" type="Function">
+                    <param id="0" name="Name">&quot;SansSlamDamage&quot;</param>
+                    <param id="1" name="Parameter {n}">0</param>
+                </action>
                 <action id="-10" name="Set value" sid="560355816614418" type="SansLegs">
                     <param id="0" name="Instance variable">XSpeed</param>
                     <param id="1" name="Value">0</param>
@@ -1158,6 +1162,51 @@
                         </action>
                     </actions>
                     <sub-events>
+                        <event-block sid="7653489424215733">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1896193851997421" type="System">
+                                    <param id="0" name="Variable">KR</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="4925109422702469" type="CombatZone">
+                                    <param id="0" name="Instance variable">InfoText</param>
+                                    <param id="1" name="Value">&quot;* You felt your sins crawling&quot; &amp; newline &amp; &quot;  on your back.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="311543805478558">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="123335850813357" type="System">
+                                    <param id="0" name="Variable">KR</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="759843657247084" type="CombatZone">
+                                    <param id="0" name="Instance variable">InfoText</param>
+                                    <param id="1" name="Value">&quot;* You felt your sins weighing&quot; &amp; newline &amp; &quot;  on your neck.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="795306615451230">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="905557718249398" type="System">
+                                    <param id="0" name="Variable">KR</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">20</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="708135348105202" type="CombatZone">
+                                    <param id="0" name="Instance variable">InfoText</param>
+                                    <param id="1" name="Value">&quot;* KARMA coursing through your&quot; &amp; newline &amp; &quot;  veins.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="8793208741086474">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="1174001643764288" type="SansLegs">
@@ -1194,21 +1243,6 @@
                                     </actions>
                                 </event-block>
                             </sub-events>
-                        </event-block>
-                        <event-block sid="7653489424215733">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="1896193851997421" type="System">
-                                    <param id="0" name="Variable">KR</param>
-                                    <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="4925109422702469" type="CombatZone">
-                                    <param id="0" name="Instance variable">InfoText</param>
-                                    <param id="1" name="Value">&quot;* You felt your sins crawling&quot; &amp; newline &amp; &quot;  on your back.&quot;</param>
-                                </action>
-                            </actions>
                         </event-block>
                         <event-block sid="3246169237782454">
                             <conditions>
@@ -3092,6 +3126,42 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="867688751715118">
+                    <conditions>
+                        <condition id="0" name="On function" sid="924414114947164" type="Function">
+                            <param id="0" name="Name">&quot;SansSlamDamage&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="699954202075289">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="161060850720440" type="System">
+                                    <param id="0" name="First value">int(Function.Param(0))</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="876120573600244" type="PlayerHeart">
+                                    <param id="0" name="Instance variable">SlamDamage</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="133881813683825">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="659499284193163" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="446579325661908" type="PlayerHeart">
+                                    <param id="0" name="Instance variable">SlamDamage</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="8364383427250982">
                     <conditions>
                         <condition id="0" name="On function" sid="2541051313696924" type="Function">
@@ -3421,7 +3491,31 @@
                                             <param id="3" name="Volume">0</param>
                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                         </action>
+                                        <action id="0" name="Call function" sid="130122766339402" type="Function">
+                                            <param id="0" name="Name">&quot;SansShake&quot;</param>
+                                            <param id="1" name="Parameter {n}">floor(abs(PlayerHeart.CustomMovement.dx) / 30 / 3)</param>
+                                        </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="891272882330464">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="181156588252501" type="PlayerHeart">
+                                                    <param id="0" name="Instance variable">SlamDamage</param>
+                                                </condition>
+                                                <condition id="-14" name="Compare variable" sid="769416621923664" type="System">
+                                                    <param id="0" name="Variable">HP</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-11" name="Subtract from" sid="596088198518508" type="System">
+                                                    <param id="0" name="Variable">HP</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -3502,7 +3596,31 @@
                                             <param id="3" name="Volume">0</param>
                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                         </action>
+                                        <action id="0" name="Call function" sid="942345758924194" type="Function">
+                                            <param id="0" name="Name">&quot;SansShake&quot;</param>
+                                            <param id="1" name="Parameter {n}">floor(abs(PlayerHeart.CustomMovement.dy) / 30 / 3)</param>
+                                        </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="918143544940180">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="819431812410868" type="PlayerHeart">
+                                                    <param id="0" name="Instance variable">SlamDamage</param>
+                                                </condition>
+                                                <condition id="-14" name="Compare variable" sid="144498256752854" type="System">
+                                                    <param id="0" name="Variable">HP</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-11" name="Subtract from" sid="147709354093065" type="System">
+                                                    <param id="0" name="Variable">HP</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -5589,6 +5707,22 @@
                                     <param id="1" name="Playback rate">1.2</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="886159456465880">
+                                    <conditions>
+                                        <condition id="-6" name="Compare height" sid="506984972378850" type="GasterBlaster">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="Height">self.ImageHeight</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="149265419648710" type="Function">
+                                            <param id="0" name="Name">&quot;SansShake&quot;</param>
+                                            <param id="1" name="Parameter {n}">5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -6612,12 +6746,12 @@
                             </conditions>
                             <actions>
                                 <action id="-3" name="Set position" sid="9390222647315846" type="CombatZoneClipper">
-                                    <param id="0" name="X">0</param>
-                                    <param id="1" name="Y">0</param>
+                                    <param id="0" name="X">-10</param>
+                                    <param id="1" name="Y">-10</param>
                                 </action>
                                 <action id="-7" name="Set size" sid="2074228143520844" type="CombatZoneClipper">
-                                    <param id="0" name="Width">LayoutWidth</param>
-                                    <param id="1" name="Height">CombatZone.Y</param>
+                                    <param id="0" name="Width">LayoutWidth + 20</param>
+                                    <param id="1" name="Height">CombatZone.Y + 10</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -6630,11 +6764,11 @@
                             </conditions>
                             <actions>
                                 <action id="-3" name="Set position" sid="2813224499152925" type="CombatZoneClipper">
-                                    <param id="0" name="X">0</param>
+                                    <param id="0" name="X">-10</param>
                                     <param id="1" name="Y">CombatZone.Y</param>
                                 </action>
                                 <action id="-7" name="Set size" sid="4466845077103075" type="CombatZoneClipper">
-                                    <param id="0" name="Width">CombatZone.X</param>
+                                    <param id="0" name="Width">CombatZone.X + 10</param>
                                     <param id="1" name="Height">CombatZone.Height</param>
                                 </action>
                             </actions>
@@ -6652,7 +6786,7 @@
                                     <param id="1" name="Y">CombatZone.Y</param>
                                 </action>
                                 <action id="-7" name="Set size" sid="6131487219099248" type="CombatZoneClipper">
-                                    <param id="0" name="Width">LayoutWidth - CombatZone.X - CombatZone.Width</param>
+                                    <param id="0" name="Width">LayoutWidth - CombatZone.X - CombatZone.Width + 10</param>
                                     <param id="1" name="Height">CombatZone.Height</param>
                                 </action>
                             </actions>
@@ -6666,12 +6800,12 @@
                             </conditions>
                             <actions>
                                 <action id="-3" name="Set position" sid="4704488797536488" type="CombatZoneClipper">
-                                    <param id="0" name="X">0</param>
+                                    <param id="0" name="X">-10</param>
                                     <param id="1" name="Y">CombatZone.Y + CombatZone.Height</param>
                                 </action>
                                 <action id="-7" name="Set size" sid="2010056193356945" type="CombatZoneClipper">
-                                    <param id="0" name="Width">LayoutWidth</param>
-                                    <param id="1" name="Height">LayoutHeight - CombatZone.Y - CombatZone.Height</param>
+                                    <param id="0" name="Width">LayoutWidth + 20</param>
+                                    <param id="1" name="Height">LayoutHeight - CombatZone.Y - CombatZone.Height + 10</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -8107,6 +8241,97 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="793266676008591" title="SansShake">
+            <sub-events>
+                <variable constant="0" name="CenterX" sid="964429951288562" static="1" type="number">0</variable>
+                <variable constant="0" name="CenterY" sid="804165102414245" static="1" type="number">0</variable>
+                <variable constant="0" name="Intensity" sid="275892975769751" static="1" type="number">0</variable>
+                <variable constant="0" name="Timer" sid="725952919004055" static="1" type="number">0</variable>
+                <event-block sid="690867833349772">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="620473805504506" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="264028447300593" type="System">
+                            <param id="0" name="Variable">CenterX</param>
+                            <param id="1" name="Value">OriginalWindowWidth / 2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="789582073713788" type="System">
+                            <param id="0" name="Variable">CenterY</param>
+                            <param id="1" name="Value">OriginalWindowHeight / 2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="581065268755846">
+                    <conditions>
+                        <condition id="0" name="On function" sid="844926222919352" type="Function">
+                            <param id="0" name="Name">&quot;SansShake&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="227913606193228" type="System">
+                            <param id="0" name="Variable">Intensity</param>
+                            <param id="1" name="Value">int(Function.Param(0))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="911122063378629" type="System">
+                            <param id="0" name="Variable">Timer</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="766781248948690">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="974614138036332" type="System">
+                            <param id="0" name="Variable">Intensity</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="188059573201193" type="System">
+                            <param id="0" name="Variable">Timer</param>
+                            <param id="1" name="Value">dt</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="730322048839997">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="164669985605282" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-7" name="Scroll to position" sid="893789459116953" type="System">
+                            <param id="0" name="X">CenterX</param>
+                            <param id="1" name="Y">CenterY</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="313868565445860">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="259546788093898" type="System">
+                            <param id="0" name="Variable">Timer</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">1/30</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="193041292027305" type="System">
+                            <param id="0" name="Variable">Timer</param>
+                            <param id="1" name="Value">1/30</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="453029557440805" type="System">
+                            <param id="0" name="Variable">Intensity</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-5" name="Scroll to X" sid="906414024255952" type="System">
+                            <param id="0" name="X">CenterX + Intensity * choose(1, -1)</param>
+                        </action>
+                        <action id="-6" name="Scroll to Y" sid="452821615897390" type="System">
+                            <param id="0" name="Y">CenterY + Intensity * choose(1, -1)</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>

@@ -11,7 +11,7 @@
         <horizontal>500</horizontal>
         <vertical>500</vertical>
     </margins>
-    <unbounded-scrolling>0</unbounded-scrolling>
+    <unbounded-scrolling>1</unbounded-scrolling>
     <layers>
         <layer name="Background" sid="8122988939693705">
             <initially-visible>1</initially-visible>
@@ -530,6 +530,7 @@
                     <instance-variables>
                         <Mode>0</Mode>
                         <Slammed>false</Slammed>
+                        <SlamDamage>false</SlamDamage>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="CustomMovement">
