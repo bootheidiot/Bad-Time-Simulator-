@@ -542,7 +542,7 @@
                 <plugin id="NinePatch" />
                 <texture />
             </object-type>
-            <object-type name="GasterBlast" sid="9836012384209519">
+            <object-type name="GasterBlast1" sid="9836012384209519">
                 <plugin id="TiledBg" />
                 <instance-variables>
                     <instance-variable name="BlastTime" sid="9838422767648153" type="number" />
@@ -552,7 +552,10 @@
                 </instance-variables>
                 <container>
                     <type>GasterBlaster</type>
-                    <type>GasterBlast</type>
+                    <type>GasterBlastHit</type>
+                    <type>GasterBlast1</type>
+                    <type>GasterBlast2</type>
+                    <type>GasterBlast3</type>
                 </container>
                 <texture />
             </object-type>
@@ -569,12 +572,14 @@
                 </instance-variables>
                 <container>
                     <type>GasterBlaster</type>
-                    <type>GasterBlast</type>
+                    <type>GasterBlastHit</type>
+                    <type>GasterBlast1</type>
+                    <type>GasterBlast2</type>
+                    <type>GasterBlast3</type>
                 </container>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="140797437682819" speed="5">
                         <frame duration="1" hotspotX="0.491228" hotspotY="0.5">
-                            <image-point name="Fire" x="0.929825" y="0.5" />
                             <collision-poly>
                                 <point x="0" y="0.977273" />
                                 <point x="0" y="0.0227273" />
@@ -585,7 +590,6 @@
                     </animation>
                     <animation framecount="5" loop="1" name="Fire" pingpong="0" repeatcount="1" repeatto="3" sid="4589316365590618" speed="30">
                         <frame duration="1" hotspotX="0.508772" hotspotY="0.5">
-                            <image-point name="Fire" x="0.929825" y="0.5" />
                             <collision-poly>
                                 <point x="0" y="1" />
                                 <point x="0" y="0.0909091" />
@@ -594,7 +598,6 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.508772" hotspotY="0.5">
-                            <image-point name="Fire" x="0.929825" y="0.5" />
                             <collision-poly>
                                 <point x="0" y="1" />
                                 <point x="0" y="0.0909091" />
@@ -603,7 +606,6 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.508772" hotspotY="0.5">
-                            <image-point name="Fire" x="0.929825" y="0.5" />
                             <collision-poly>
                                 <point x="0" y="1" />
                                 <point x="0" y="0.0227273" />
@@ -612,7 +614,6 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.508772" hotspotY="0.5">
-                            <image-point name="Fire" x="0.929825" y="0.5" />
                             <collision-poly>
                                 <point x="0" y="1" />
                                 <point x="0" y="0" />
@@ -621,7 +622,6 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.508772" hotspotY="0.5">
-                            <image-point name="Fire" x="0.929825" y="0.5" />
                             <collision-poly>
                                 <point x="0" y="1" />
                                 <point x="0" y="0" />
@@ -716,6 +716,39 @@
                         </frame>
                     </animation>
                 </animation-folder>
+            </object-type>
+            <object-type name="GasterBlast2" sid="336730486351203">
+                <plugin id="TiledBg" />
+                <container>
+                    <type>GasterBlaster</type>
+                    <type>GasterBlastHit</type>
+                    <type>GasterBlast1</type>
+                    <type>GasterBlast2</type>
+                    <type>GasterBlast3</type>
+                </container>
+                <texture />
+            </object-type>
+            <object-type name="GasterBlast3" sid="508841962091807">
+                <plugin id="TiledBg" />
+                <container>
+                    <type>GasterBlaster</type>
+                    <type>GasterBlastHit</type>
+                    <type>GasterBlast1</type>
+                    <type>GasterBlast2</type>
+                    <type>GasterBlast3</type>
+                </container>
+                <texture />
+            </object-type>
+            <object-type name="GasterBlastHit" sid="165116925986465">
+                <plugin id="TiledBg" />
+                <container>
+                    <type>GasterBlaster</type>
+                    <type>GasterBlastHit</type>
+                    <type>GasterBlast1</type>
+                    <type>GasterBlast2</type>
+                    <type>GasterBlast3</type>
+                </container>
+                <texture />
             </object-type>
         </object-folder>
         <object-folder name="Timeline">
@@ -1012,7 +1045,7 @@
         </family>
         <family name="AttackTiled" plugin-id="TiledBg" sid="9784977049754561">
             <members>
-                <member>GasterBlast</member>
+                <member>GasterBlastHit</member>
             </members>
             <instance-variables>
                 <instance-variable name="Damage" sid="5846064141855004" type="number" />

@@ -5335,6 +5335,22 @@
                             <param id="0" name="Tag">&quot;&quot;</param>
                             <param id="1" name="Playback rate">1.2</param>
                         </action>
+                        <action id="-29" name="Move to object" sid="194140213150549" type="GasterBlast1">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Object">GasterBlaster</param>
+                        </action>
+                        <action id="-29" name="Move to object" sid="493863240508335" type="GasterBlast2">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Object">GasterBlast1</param>
+                        </action>
+                        <action id="-29" name="Move to object" sid="350803109602527" type="GasterBlast3">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Object">GasterBlast2</param>
+                        </action>
+                        <action id="-29" name="Move to object" sid="135938976474316" type="GasterBlastHit">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Object">GasterBlast3</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <variable constant="0" name="Size" sid="8132531473101679" static="0" type="number">0</variable>
@@ -5369,7 +5385,7 @@
                                     <param id="0" name="Instance variable">Timer</param>
                                     <param id="1" name="Value">Function.Param(6)</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="2117638882385145" type="GasterBlast">
+                                <action id="-10" name="Set value" sid="2117638882385145" type="GasterBlast1">
                                     <param id="0" name="Instance variable">BlastTime</param>
                                     <param id="1" name="Value">Function.Param(7)</param>
                                 </action>
@@ -5669,14 +5685,23 @@
                                     <param id="0" name="Instance variable">State</param>
                                     <param id="1" name="Value">STATE_LEAVE</param>
                                 </action>
-                                <action id="-15" name="Set visible" sid="3030736890258935" type="GasterBlast">
+                                <action id="-15" name="Set visible" sid="3030736890258935" type="GasterBlast1">
                                     <param id="0" name="Visibility">1</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="2600151717672333" type="GasterBlast">
+                                <action id="-15" name="Set visible" sid="334795134963692" type="GasterBlast2">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="534528986737835" type="GasterBlast3">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action disabled="1" id="-15" name="Set visible" sid="802230195471861" type="GasterBlastHit">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="2600151717672333" type="GasterBlastHit">
                                     <param id="0" name="Instance variable">Damage</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="9378633162546508" type="GasterBlast">
+                                <action id="-10" name="Set value" sid="9378633162546508" type="GasterBlastHit">
                                     <param id="0" name="Instance variable">Karma</param>
                                     <param id="1" name="Value">10</param>
                                 </action>
@@ -5770,10 +5795,10 @@
                 <comment>No idea what is going on here, so decompiled code ftw.</comment>
                 <event-block sid="9849569799604486">
                     <conditions>
-                        <condition id="-9" name="Is visible" sid="3068783491998972" type="GasterBlast" />
+                        <condition id="-9" name="Is visible" sid="3068783491998972" type="GasterBlast1" />
                     </conditions>
                     <actions>
-                        <action id="-11" name="Add to" sid="8584458927014005" type="GasterBlast">
+                        <action id="-11" name="Add to" sid="8584458927014005" type="GasterBlast1">
                             <param id="0" name="Instance variable">Timer</param>
                             <param id="1" name="Value">dt</param>
                         </action>
@@ -5782,14 +5807,14 @@
                         <comment>Original calculation meant to lerp BaseSize to 35*scale over 4 frames at 30fps</comment>
                         <event-block sid="1069996621873694">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="3660630967937648" type="GasterBlast">
+                                <condition id="-7" name="Compare instance variable" sid="3660630967937648" type="GasterBlast1">
                                     <param id="0" name="Instance variable">Timer</param>
                                     <param id="1" name="Comparison">2</param>
                                     <param id="2" name="Value">4/30</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-11" name="Add to" sid="8224636756538163" type="GasterBlast">
+                                <action id="-11" name="Add to" sid="8224636756538163" type="GasterBlast1">
                                     <param id="0" name="Instance variable">BaseSize</param>
                                     <param id="1" name="Value">floor(35 * GasterBlaster.Height / GasterBlaster.ImageHeight / 4)*dt*30</param>
                                 </action>
@@ -5797,19 +5822,19 @@
                         </event-block>
                         <event-block sid="5344464273138173">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="9882464044940844" type="GasterBlast">
+                                <condition id="-7" name="Compare instance variable" sid="9882464044940844" type="GasterBlast1">
                                     <param id="0" name="Instance variable">Timer</param>
                                     <param id="1" name="Comparison">5</param>
                                     <param id="2" name="Value">4/30</param>
                                 </condition>
-                                <condition id="-7" name="Compare instance variable" sid="294755662274402" type="GasterBlast">
+                                <condition id="-7" name="Compare instance variable" sid="294755662274402" type="GasterBlast1">
                                     <param id="0" name="Instance variable">Timer</param>
                                     <param id="1" name="Comparison">2</param>
                                     <param id="2" name="Value">4/30+dt</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="1972737510883382" type="GasterBlast">
+                                <action id="-10" name="Set value" sid="1972737510883382" type="GasterBlast1">
                                     <param id="0" name="Instance variable">BaseSize</param>
                                     <param id="1" name="Value">35 * GasterBlaster.Height / GasterBlaster.ImageHeight</param>
                                 </action>
@@ -5817,25 +5842,25 @@
                         </event-block>
                         <event-block sid="7754391366361445">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="9668690311636743" type="GasterBlast">
+                                <condition id="-7" name="Compare instance variable" sid="9668690311636743" type="GasterBlast1">
                                     <param id="0" name="Instance variable">Timer</param>
                                     <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Value">5/30 + GasterBlast.BlastTime</param>
+                                    <param id="2" name="Value">5/30 + GasterBlast1.BlastTime</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="2737882451125881" type="GasterBlast">
+                                <action id="-10" name="Set value" sid="2737882451125881" type="GasterBlast1">
                                     <param id="0" name="Instance variable">BaseSize</param>
-                                    <param id="1" name="Value">GasterBlast.BaseSize*(0.8^(dt*30))</param>
+                                    <param id="1" name="Value">GasterBlast1.BaseSize*(0.8^(dt*30))</param>
                                 </action>
-                                <action id="-16" name="Set opacity" sid="7232055394715955" type="GasterBlast">
-                                    <param id="0" name="Opacity">100 - ((GasterBlast.Timer-GasterBlast.BlastTime)*30-5)*10</param>
+                                <action id="-16" name="Set opacity" sid="7232055394715955" type="GasterBlast1">
+                                    <param id="0" name="Opacity">100 - ((GasterBlast1.Timer-GasterBlast1.BlastTime)*30-5)*10</param>
                                 </action>
                             </actions>
                             <sub-events>
                                 <event-block sid="3458741314551572">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="385484557272392" type="GasterBlast">
+                                        <condition id="-7" name="Compare instance variable" sid="385484557272392" type="GasterBlast1">
                                             <param id="0" name="Instance variable">BaseSize</param>
                                             <param id="1" name="Comparison">3</param>
                                             <param id="2" name="Value">2</param>
@@ -5849,15 +5874,18 @@
                         </event-block>
                         <event-block sid="448060430861031">
                             <conditions>
-                                <condition id="-10" name="Compare opacity" sid="7139969211329192" type="GasterBlast">
+                                <condition id="-10" name="Compare opacity" sid="7139969211329192" type="GasterBlast1">
                                     <param id="0" name="Comparison">3</param>
                                     <param id="1" name="Opacity">80</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="4837433704481348" type="GasterBlast">
+                                <action id="-10" name="Set value" sid="4837433704481348" type="GasterBlastHit">
                                     <param id="0" name="Instance variable">Damage</param>
                                     <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="168322436237805" type="GasterBlastHit">
+                                    <param id="0" name="Visibility">0</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -5866,12 +5894,21 @@
                                 <condition id="-1" name="Every tick" sid="1923266302409765" type="System" />
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="5295908500638102" type="GasterBlast">
+                                <action id="-10" name="Set value" sid="5295908500638102" type="GasterBlast1">
                                     <param id="0" name="Instance variable">SineSize</param>
-                                    <param id="1" name="Value">sin(GasterBlast.Timer*30 / 1.5 * 180 / pi) * GasterBlast.BaseSize / 4</param>
+                                    <param id="1" name="Value">sin(GasterBlast1.Timer*30 / 1.5 * 180 / pi) * GasterBlast1.BaseSize / 4</param>
                                 </action>
-                                <action id="-6" name="Set height" sid="2351205795153705" type="GasterBlast">
-                                    <param id="0" name="Height">GasterBlast.BaseSize + GasterBlast.SineSize</param>
+                                <action id="-6" name="Set height" sid="2351205795153705" type="GasterBlast1">
+                                    <param id="0" name="Height">GasterBlast1.BaseSize + GasterBlast1.SineSize</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="986795216070762" type="GasterBlast2">
+                                    <param id="0" name="Height">GasterBlast1.BaseSize / 1.25 + GasterBlast1.SineSize</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="663633254672557" type="GasterBlast3">
+                                    <param id="0" name="Height">GasterBlast1.BaseSize / 2 + GasterBlast1.SineSize</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="305993147012933" type="GasterBlastHit">
+                                    <param id="0" name="Height">GasterBlast1.BaseSize</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -5879,20 +5916,84 @@
                 </event-block>
                 <event-block sid="66841022965886">
                     <conditions>
-                        <condition id="-1" name="Every tick" sid="1645014954474109" type="System" />
+                        <condition id="-11" name="For Each" sid="1645014954474109" type="System">
+                            <param id="0" name="Object">GasterBlaster</param>
+                        </condition>
                     </conditions>
                     <actions>
-                        <action id="-4" name="Set position to another object" sid="7647056863301034" type="GasterBlast">
+                        <action disabled="1" id="-4" name="Set position to another object" sid="7647056863301034" type="GasterBlast1">
                             <param id="0" name="Object">GasterBlaster</param>
                             <param id="1" name="Image point (optional)">&quot;Fire&quot;</param>
                         </action>
-                        <action id="-8" name="Set angle" sid="7586561644070464" type="GasterBlast">
-                            <param id="0" name="Angle">GasterBlaster.Angle</param>
-                        </action>
-                        <action id="-5" name="Set width" sid="3595740796843345" type="GasterBlast">
-                            <param id="0" name="Width">1000</param>
-                        </action>
                     </actions>
+                    <sub-events>
+                        <variable constant="0" name="Scale" sid="438648770353117" static="0" type="number">0</variable>
+                        <event-block sid="472476662332690">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="415140715668028" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="410817023556141" type="System">
+                                    <param id="0" name="Variable">Scale</param>
+                                    <param id="1" name="Value">GasterBlaster.Height / GasterBlaster.ImageHeight / 2</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="964270930542363" type="GasterBlast1">
+                                    <param id="0" name="X">GasterBlaster.X + cos(GasterBlaster.Angle) * 70 * Scale</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="220887220223385" type="GasterBlast1">
+                                    <param id="0" name="Y">GasterBlaster.Y +sin(GasterBlaster.Angle) * 70 * Scale</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="7586561644070464" type="GasterBlast1">
+                                    <param id="0" name="Angle">GasterBlaster.Angle</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="3595740796843345" type="GasterBlast1">
+                                    <param id="0" name="Width">1000</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="470891254885413" type="GasterBlast2">
+                                    <param id="0" name="X">GasterBlaster.X +cos(GasterBlaster.Angle) * 60 * Scale</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="839006218212202" type="GasterBlast2">
+                                    <param id="0" name="Y">GasterBlaster.Y +sin(GasterBlaster.Angle) * 60 * Scale</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="869769952645532" type="GasterBlast2">
+                                    <param id="0" name="Angle">GasterBlaster.Angle</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="138064161277121" type="GasterBlast2">
+                                    <param id="0" name="Width">10*Scale</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="394920566669603" type="GasterBlast2">
+                                    <param id="0" name="Opacity">GasterBlast1.Opacity</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="537745316046277" type="GasterBlast3">
+                                    <param id="0" name="X">GasterBlaster.X +cos(GasterBlaster.Angle) * 50 * Scale</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="695779907480235" type="GasterBlast3">
+                                    <param id="0" name="Y">GasterBlaster.Y +sin(GasterBlaster.Angle) * 50 * Scale</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="392444011482823" type="GasterBlast3">
+                                    <param id="0" name="Angle">GasterBlaster.Angle</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="503010633724381" type="GasterBlast3">
+                                    <param id="0" name="Width">20*Scale</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="457710453788763" type="GasterBlast3">
+                                    <param id="0" name="Opacity">GasterBlast1.Opacity</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="247211766602194" type="GasterBlastHit">
+                                    <param id="0" name="X">GasterBlaster.X +cos(GasterBlaster.Angle) * 70 * Scale</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="749030365749420" type="GasterBlastHit">
+                                    <param id="0" name="Y">GasterBlaster.Y +sin(GasterBlaster.Angle) * 70 * Scale</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="996717214578906" type="GasterBlastHit">
+                                    <param id="0" name="Angle">GasterBlaster.Angle</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="503004939969375" type="GasterBlastHit">
+                                    <param id="0" name="Width">1000</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -7606,12 +7707,12 @@
                     <sub-events>
                         <event-block sid="5726679394208632">
                             <conditions>
-                                <condition id="-36" name="Pick overlapping point" sid="2487167129589046" type="System">
+                                <condition disabled="1" id="-36" name="Pick overlapping point" sid="2487167129589046" type="System">
                                     <param id="0" name="Object">AttackSprite</param>
                                     <param id="1" name="X">PlayerHeart.X</param>
                                     <param id="2" name="Y">PlayerHeart.Y</param>
                                 </condition>
-                                <condition disabled="1" id="1" name="Is overlapping another object" sid="688643898473769" type="PlayerHitbox">
+                                <condition id="1" name="Is overlapping another object" sid="688643898473769" type="PlayerHitbox">
                                     <param id="0" name="Object">AttackSprite</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="6689891578961013" type="AttackSprite">
@@ -7693,12 +7794,12 @@
                         </event-block>
                         <event-block sid="3489532580732596">
                             <conditions>
-                                <condition id="-36" name="Pick overlapping point" sid="7421831333213587" type="System">
+                                <condition disabled="1" id="-36" name="Pick overlapping point" sid="7421831333213587" type="System">
                                     <param id="0" name="Object">AttackTiled</param>
                                     <param id="1" name="X">PlayerHeart.X</param>
                                     <param id="2" name="Y">PlayerHeart.Y</param>
                                 </condition>
-                                <condition disabled="1" id="1" name="Is overlapping another object" sid="162901615373973" type="PlayerHitbox">
+                                <condition id="1" name="Is overlapping another object" sid="162901615373973" type="PlayerHitbox">
                                     <param id="0" name="Object">AttackTiled</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="6203955502490003" type="AttackTiled">
@@ -7733,12 +7834,12 @@
                         </event-block>
                         <event-block sid="3041692031166179">
                             <conditions>
-                                <condition id="-36" name="Pick overlapping point" sid="3625424187718105" type="System">
+                                <condition disabled="1" id="-36" name="Pick overlapping point" sid="3625424187718105" type="System">
                                     <param id="0" name="Object">Attack9Patch</param>
                                     <param id="1" name="X">PlayerHeart.X</param>
                                     <param id="2" name="Y">PlayerHeart.Y</param>
                                 </condition>
-                                <condition disabled="1" id="1" name="Is overlapping another object" sid="216628994048020" type="PlayerHitbox">
+                                <condition id="1" name="Is overlapping another object" sid="216628994048020" type="PlayerHitbox">
                                     <param id="0" name="Object">Attack9Patch</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="1580583761025439" type="Attack9Patch">
