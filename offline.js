@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1496808132,
+	"version": 1496978708,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -39,6 +39,7 @@
 		"images/bonestabh.png",
 		"images/bonestabwarn.png",
 		"images/menubonebottom-sheet0.png",
+		"images/gasterblasthit.png",
 		"images/battlefont.png",
 		"images/sansfont.png",
 		"images/defaultfont.png",
