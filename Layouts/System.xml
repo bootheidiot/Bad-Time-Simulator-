@@ -1099,6 +1099,7 @@
                 <depth>1</depth>
             </properties>
         </instance>
+        <instance type="TLLabels" uid="65" />
     </nonworld-instances>
     <effects />
 </c2layout>

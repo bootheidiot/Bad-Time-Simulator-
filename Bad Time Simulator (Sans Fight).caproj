@@ -761,6 +761,9 @@
             <object-type global="1" name="TLVars" sid="7317040439391986">
                 <plugin id="Dictionary" />
             </object-type>
+            <object-type global="1" name="TLLabels" sid="281757033099861">
+                <plugin id="Dictionary" />
+            </object-type>
         </object-folder>
         <object-folder name="Fonts">
             <object-type name="BattleFont" sid="6163397057824361">

@@ -204,32 +204,52 @@
                     <param id="0" name="Name">&quot;BattlePanic&quot;</param>
                 </condition>
             </conditions>
-            <actions>
-                <action id="-3" name="Create object" sid="4381738516254251" type="System">
-                    <param id="0" name="Object to create">BattleFont</param>
-                    <param id="1" name="Layer">&quot;Overlay&quot;</param>
-                    <param id="2" name="X">0</param>
-                    <param id="3" name="Y">0</param>
-                </action>
-                <action id="-10" name="Set value" sid="7846674212420365" type="BattleFont">
-                    <param id="0" name="Instance variable">Name</param>
-                    <param id="1" name="Value">&quot;Error&quot;</param>
-                </action>
-                <action id="-10" name="Set value" sid="523605850548551" type="BattleFont">
-                    <param id="0" name="Instance variable">Timeout</param>
-                    <param id="1" name="Value">3</param>
-                </action>
-                <action id="-5" name="Set width" sid="7371100064444184" type="BattleFont">
-                    <param id="0" name="Width">640</param>
-                </action>
-                <action id="0" name="Set text" sid="4589855453196791" type="BattleFont">
-                    <param id="0" name="Text">uppercase(Function.Param(0))</param>
-                </action>
-                <action id="0" name="Call function" sid="9917848270539777" type="Function">
-                    <param id="0" name="Name">&quot;EndAttack&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
-            </actions>
+            <actions />
+            <sub-events>
+                <event-block sid="400460885232819">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="617307408619556" type="RPGText">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Error&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="783310158775891" type="RPGText" />
+                    </actions>
+                </event-block>
+                <event-block sid="966582283938964">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="774706709433379" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="4381738516254251" type="System">
+                            <param id="0" name="Object to create">BattleFont</param>
+                            <param id="1" name="Layer">&quot;Overlay&quot;</param>
+                            <param id="2" name="X">0</param>
+                            <param id="3" name="Y">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7846674212420365" type="BattleFont">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Value">&quot;Error&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="523605850548551" type="BattleFont">
+                            <param id="0" name="Instance variable">Timeout</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="7371100064444184" type="BattleFont">
+                            <param id="0" name="Width">640</param>
+                        </action>
+                        <action id="0" name="Set text" sid="4589855453196791" type="BattleFont">
+                            <param id="0" name="Text">uppercase(Function.Param(0))</param>
+                        </action>
+                        <action id="0" name="Call function" sid="9917848270539777" type="Function">
+                            <param id="0" name="Name">&quot;EndAttack&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block any="1" sid="7354628487307059">
             <conditions>
@@ -2964,8 +2984,7 @@
         </event-group>
         <event-group description="" sid="6451037740410459" title="PlayerMovement">
             <sub-events>
-                <variable constant="1" name="HEART_GRAVITY" sid="5736367099838918" static="0" type="number">450</variable>
-                <variable constant="1" name="HEART_JUMP_STRENGTH" sid="9477825447959367" static="0" type="number">240</variable>
+                <variable constant="1" name="HEART_JUMP_STRENGTH" sid="9477825447959367" static="0" type="number">180</variable>
                 <variable constant="1" name="HEART_JUMPHOLD_CUTOFF" sid="7658838381136613" static="0" type="number">30</variable>
                 <variable constant="0" name="HeartSpeed" sid="1915279441809349" static="0" type="number">150</variable>
                 <variable constant="0" name="MaxFallSpeed" sid="963626393445968" static="1" type="number">750</variable>
@@ -3361,97 +3380,6 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="801354357327565">
-                    <conditions>
-                        <condition id="0" name="On function" sid="7924178346528403" type="Function">
-                            <param id="0" name="Name">&quot;HeartStopJump&quot;</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="1525831766102817" type="PlayerHeart">
-                            <param id="0" name="Instance variable">Mode</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">HEARTMODE_BLUE</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="8270378667452994">
-                            <conditions>
-                                <condition id="-11" name="Is within angle" sid="5573517244773432" type="PlayerHeart">
-                                    <param id="0" name="Within">0.5</param>
-                                    <param id="1" name="Angle">0</param>
-                                </condition>
-                                <condition behavior="CustomMovement" id="1" name="Compare speed" sid="5872270998579712" type="PlayerHeart">
-                                    <param id="0" name="Which">1</param>
-                                    <param id="1" name="Comparison">2</param>
-                                    <param id="2" name="Speed">-HEART_JUMPHOLD_CUTOFF</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="CustomMovement" id="2" name="Set speed" sid="7693347308635991" type="PlayerHeart">
-                                    <param id="0" name="Which">1</param>
-                                    <param id="1" name="Speed">-HEART_JUMPHOLD_CUTOFF</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="5858035008310804">
-                            <conditions>
-                                <condition id="-11" name="Is within angle" sid="4409586312802145" type="PlayerHeart">
-                                    <param id="0" name="Within">0.5</param>
-                                    <param id="1" name="Angle">90</param>
-                                </condition>
-                                <condition behavior="CustomMovement" id="1" name="Compare speed" sid="576177434900007" type="PlayerHeart">
-                                    <param id="0" name="Which">2</param>
-                                    <param id="1" name="Comparison">2</param>
-                                    <param id="2" name="Speed">-HEART_JUMPHOLD_CUTOFF</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="CustomMovement" id="2" name="Set speed" sid="3389728667577488" type="PlayerHeart">
-                                    <param id="0" name="Which">2</param>
-                                    <param id="1" name="Speed">-HEART_JUMPHOLD_CUTOFF</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="8992196825827355">
-                            <conditions>
-                                <condition id="-11" name="Is within angle" sid="670359547146752" type="PlayerHeart">
-                                    <param id="0" name="Within">0.5</param>
-                                    <param id="1" name="Angle">180</param>
-                                </condition>
-                                <condition behavior="CustomMovement" id="1" name="Compare speed" sid="1628434266220634" type="PlayerHeart">
-                                    <param id="0" name="Which">1</param>
-                                    <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Speed">HEART_JUMPHOLD_CUTOFF</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="CustomMovement" id="2" name="Set speed" sid="9907778997631794" type="PlayerHeart">
-                                    <param id="0" name="Which">1</param>
-                                    <param id="1" name="Speed">HEART_JUMPHOLD_CUTOFF</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="6228266444327606">
-                            <conditions>
-                                <condition id="-11" name="Is within angle" sid="5159810341240709" type="PlayerHeart">
-                                    <param id="0" name="Within">0.5</param>
-                                    <param id="1" name="Angle">270</param>
-                                </condition>
-                                <condition behavior="CustomMovement" id="1" name="Compare speed" sid="8485468809288661" type="PlayerHeart">
-                                    <param id="0" name="Which">2</param>
-                                    <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Speed">HEART_JUMPHOLD_CUTOFF</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="CustomMovement" id="2" name="Set speed" sid="2607682516310206" type="PlayerHeart">
-                                    <param id="0" name="Which">2</param>
-                                    <param id="1" name="Speed">HEART_JUMPHOLD_CUTOFF</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
                 <event-block sid="9436415480372662">
                     <conditions>
                         <condition behavior="CustomMovement" id="3" name="On horizontal step" sid="5902516485872742" type="PlayerHeart" />
@@ -3828,6 +3756,311 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <variable constant="0" name="DownSpeed" sid="542820942674276" static="0" type="number">0</variable>
+                        <variable constant="0" name="Gravity" sid="5736367099838918" static="0" type="number">0</variable>
+                        <event-block sid="7834292363010873">
+                            <conditions>
+                                <condition id="-11" name="Is within angle" sid="5760920225358032" type="PlayerHeart">
+                                    <param id="0" name="Within">0.5</param>
+                                    <param id="1" name="Angle">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="5566320554485508">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="8170634150133423" type="VPad">
+                                            <param id="0" name="Instance variable">Left</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">VPad.LastLeft</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="1704679581256191" type="Function">
+                                            <param id="0" name="Name">&quot;HeartJump&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5965161198429997">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="3555706857014998" type="VPad">
+                                            <param id="0" name="Instance variable">Left</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">VPad.LastLeft</param>
+                                        </condition>
+                                        <condition behavior="CustomMovement" id="1" name="Compare speed" sid="638353723962329" type="PlayerHeart">
+                                            <param id="0" name="Which">1</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Speed">-HEART_JUMPHOLD_CUTOFF</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="CustomMovement" id="2" name="Set speed" sid="321658193371436" type="PlayerHeart">
+                                            <param id="0" name="Which">1</param>
+                                            <param id="1" name="Speed">-HEART_JUMPHOLD_CUTOFF</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="639484880784249">
+                                    <conditions>
+                                        <condition id="-1" name="Every tick" sid="340913804520019" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="386600400644187" type="System">
+                                            <param id="0" name="Variable">DownSpeed</param>
+                                            <param id="1" name="Value">PlayerHeart.CustomMovement.dx</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="6776293954885638">
+                            <conditions>
+                                <condition id="-11" name="Is within angle" sid="6871575678330835" type="PlayerHeart">
+                                    <param id="0" name="Within">0.5</param>
+                                    <param id="1" name="Angle">90</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="1432182632489061">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="2645461980121637" type="VPad">
+                                            <param id="0" name="Instance variable">Up</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">VPad.LastUp</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="8860456215561423" type="Function">
+                                            <param id="0" name="Name">&quot;HeartJump&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5049423388907501">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="5302205804747884" type="VPad">
+                                            <param id="0" name="Instance variable">Up</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">VPad.LastUp</param>
+                                        </condition>
+                                        <condition behavior="CustomMovement" id="1" name="Compare speed" sid="247672766563090" type="PlayerHeart">
+                                            <param id="0" name="Which">2</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Speed">-HEART_JUMPHOLD_CUTOFF</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="CustomMovement" id="2" name="Set speed" sid="358632230415739" type="PlayerHeart">
+                                            <param id="0" name="Which">2</param>
+                                            <param id="1" name="Speed">-HEART_JUMPHOLD_CUTOFF</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="315017151817044">
+                                    <conditions>
+                                        <condition id="-1" name="Every tick" sid="973951699742513" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="604020893917843" type="System">
+                                            <param id="0" name="Variable">DownSpeed</param>
+                                            <param id="1" name="Value">PlayerHeart.CustomMovement.dy</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="3278462062307887">
+                            <conditions>
+                                <condition id="-11" name="Is within angle" sid="7875782387880278" type="PlayerHeart">
+                                    <param id="0" name="Within">0.5</param>
+                                    <param id="1" name="Angle">180</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="5104074868909384">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="9161041147980361" type="VPad">
+                                            <param id="0" name="Instance variable">Right</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">VPad.LastRight</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="5334565939210874" type="Function">
+                                            <param id="0" name="Name">&quot;HeartJump&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="9734544860785736">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="9271326846317249" type="VPad">
+                                            <param id="0" name="Instance variable">Right</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">VPad.LastRight</param>
+                                        </condition>
+                                        <condition behavior="CustomMovement" id="1" name="Compare speed" sid="699157627407729" type="PlayerHeart">
+                                            <param id="0" name="Which">1</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Speed">HEART_JUMPHOLD_CUTOFF</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="CustomMovement" id="2" name="Set speed" sid="957928847534464" type="PlayerHeart">
+                                            <param id="0" name="Which">1</param>
+                                            <param id="1" name="Speed">HEART_JUMPHOLD_CUTOFF</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="252905306373820">
+                                    <conditions>
+                                        <condition id="-1" name="Every tick" sid="525452164412622" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="779860466627566" type="System">
+                                            <param id="0" name="Variable">DownSpeed</param>
+                                            <param id="1" name="Value">-PlayerHeart.CustomMovement.dx</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="569231508417743">
+                            <conditions>
+                                <condition id="-11" name="Is within angle" sid="6054468166755179" type="PlayerHeart">
+                                    <param id="0" name="Within">0.5</param>
+                                    <param id="1" name="Angle">270</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="8668660709019562">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="1860315858968747" type="VPad">
+                                            <param id="0" name="Instance variable">Down</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">VPad.LastDown</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="1693410721667865" type="Function">
+                                            <param id="0" name="Name">&quot;HeartJump&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2902168592647932">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="183014636456794" type="VPad">
+                                            <param id="0" name="Instance variable">Down</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">VPad.LastDown</param>
+                                        </condition>
+                                        <condition behavior="CustomMovement" id="1" name="Compare speed" sid="457200900638089" type="PlayerHeart">
+                                            <param id="0" name="Which">2</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Speed">HEART_JUMPHOLD_CUTOFF</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="CustomMovement" id="2" name="Set speed" sid="109870714779246" type="PlayerHeart">
+                                            <param id="0" name="Which">2</param>
+                                            <param id="1" name="Speed">HEART_JUMPHOLD_CUTOFF</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="216833888869266">
+                                    <conditions>
+                                        <condition id="-1" name="Every tick" sid="455437883844523" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="429988020478622" type="System">
+                                            <param id="0" name="Variable">DownSpeed</param>
+                                            <param id="1" name="Value">-PlayerHeart.CustomMovement.dy</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="917979822609806">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="661245762472294" type="System">
+                                    <param id="0" name="Variable">DownSpeed</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">240</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="134935846491737" type="System">
+                                    <param id="0" name="Variable">DownSpeed</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">15</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="283168184338934" type="System">
+                                    <param id="0" name="Variable">Gravity</param>
+                                    <param id="1" name="Value">540</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="135149629739481">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="788343186255406" type="System">
+                                    <param id="0" name="Variable">DownSpeed</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">15</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="621530337876883" type="System">
+                                    <param id="0" name="Variable">DownSpeed</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">-30</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="338089297036133" type="System">
+                                    <param id="0" name="Variable">Gravity</param>
+                                    <param id="1" name="Value">180</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="613198143791947">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="962836060221351" type="System">
+                                    <param id="0" name="Variable">DownSpeed</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">-30</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="747452516447481" type="System">
+                                    <param id="0" name="Variable">DownSpeed</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">-120</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="776733702689768" type="System">
+                                    <param id="0" name="Variable">Gravity</param>
+                                    <param id="1" name="Value">450</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="846307393036921">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="656839150940424" type="System">
+                                    <param id="0" name="Variable">DownSpeed</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">-120</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="872727136379418" type="System">
+                                    <param id="0" name="Variable">Gravity</param>
+                                    <param id="1" name="Value">180</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <variable constant="0" name="X" sid="5491853016764061" static="0" type="number">0</variable>
                         <variable constant="0" name="Y" sid="3036505105048854" static="0" type="number">0</variable>
                         <event-block sid="2752210042070685">
@@ -3856,11 +4089,11 @@
                             <actions>
                                 <action behavior="CustomMovement" id="2" name="Set speed" sid="8183574702029611" type="PlayerHeart">
                                     <param id="0" name="Which">1</param>
-                                    <param id="1" name="Speed">PlayerHeart.CustomMovement.dx + X*HEART_GRAVITY*dt</param>
+                                    <param id="1" name="Speed">PlayerHeart.CustomMovement.dx + X*Gravity*dt</param>
                                 </action>
                                 <action behavior="CustomMovement" id="2" name="Set speed" sid="8354982216422387" type="PlayerHeart">
                                     <param id="0" name="Which">2</param>
-                                    <param id="1" name="Speed">PlayerHeart.CustomMovement.dy + Y*HEART_GRAVITY*dt</param>
+                                    <param id="1" name="Speed">PlayerHeart.CustomMovement.dy + Y*Gravity*dt</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -4168,170 +4401,6 @@
                                             </actions>
                                         </event-block>
                                     </sub-events>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="7834292363010873">
-                            <conditions>
-                                <condition id="-11" name="Is within angle" sid="5760920225358032" type="PlayerHeart">
-                                    <param id="0" name="Within">0.5</param>
-                                    <param id="1" name="Angle">0</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="5566320554485508">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="8170634150133423" type="VPad">
-                                            <param id="0" name="Instance variable">Left</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Value">VPad.LastLeft</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="1704679581256191" type="Function">
-                                            <param id="0" name="Name">&quot;HeartJump&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="5965161198429997">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="3555706857014998" type="VPad">
-                                            <param id="0" name="Instance variable">Left</param>
-                                            <param id="1" name="Comparison">2</param>
-                                            <param id="2" name="Value">VPad.LastLeft</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="9025864229911343" type="Function">
-                                            <param id="0" name="Name">&quot;HeartStopJump&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="6776293954885638">
-                            <conditions>
-                                <condition id="-11" name="Is within angle" sid="6871575678330835" type="PlayerHeart">
-                                    <param id="0" name="Within">0.5</param>
-                                    <param id="1" name="Angle">90</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="1432182632489061">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="2645461980121637" type="VPad">
-                                            <param id="0" name="Instance variable">Up</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Value">VPad.LastUp</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="8860456215561423" type="Function">
-                                            <param id="0" name="Name">&quot;HeartJump&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="5049423388907501">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="5302205804747884" type="VPad">
-                                            <param id="0" name="Instance variable">Up</param>
-                                            <param id="1" name="Comparison">2</param>
-                                            <param id="2" name="Value">VPad.LastUp</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="2165624257860706" type="Function">
-                                            <param id="0" name="Name">&quot;HeartStopJump&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="3278462062307887">
-                            <conditions>
-                                <condition id="-11" name="Is within angle" sid="7875782387880278" type="PlayerHeart">
-                                    <param id="0" name="Within">0.5</param>
-                                    <param id="1" name="Angle">180</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="5104074868909384">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="9161041147980361" type="VPad">
-                                            <param id="0" name="Instance variable">Right</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Value">VPad.LastRight</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="5334565939210874" type="Function">
-                                            <param id="0" name="Name">&quot;HeartJump&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="9734544860785736">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="9271326846317249" type="VPad">
-                                            <param id="0" name="Instance variable">Right</param>
-                                            <param id="1" name="Comparison">2</param>
-                                            <param id="2" name="Value">VPad.LastRight</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="8705356746467848" type="Function">
-                                            <param id="0" name="Name">&quot;HeartStopJump&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="569231508417743">
-                            <conditions>
-                                <condition id="-11" name="Is within angle" sid="6054468166755179" type="PlayerHeart">
-                                    <param id="0" name="Within">0.5</param>
-                                    <param id="1" name="Angle">270</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="8668660709019562">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="1860315858968747" type="VPad">
-                                            <param id="0" name="Instance variable">Down</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Value">VPad.LastDown</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="1693410721667865" type="Function">
-                                            <param id="0" name="Name">&quot;HeartJump&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="2902168592647932">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="183014636456794" type="VPad">
-                                            <param id="0" name="Instance variable">Down</param>
-                                            <param id="1" name="Comparison">2</param>
-                                            <param id="2" name="Value">VPad.LastDown</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="2536367906187867" type="Function">
-                                            <param id="0" name="Name">&quot;HeartStopJump&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
-                                        </action>
-                                    </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -5908,7 +5977,7 @@
                                     <param id="0" name="Height">GasterBlast1.BaseSize / 2 + GasterBlast1.SineSize</param>
                                 </action>
                                 <action id="-6" name="Set height" sid="305993147012933" type="GasterBlastHit">
-                                    <param id="0" name="Height">GasterBlast1.BaseSize</param>
+                                    <param id="0" name="Height">GasterBlast1.BaseSize * 3 / 4</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -5920,12 +5989,7 @@
                             <param id="0" name="Object">GasterBlaster</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action disabled="1" id="-4" name="Set position to another object" sid="7647056863301034" type="GasterBlast1">
-                            <param id="0" name="Object">GasterBlaster</param>
-                            <param id="1" name="Image point (optional)">&quot;Fire&quot;</param>
-                        </action>
-                    </actions>
+                    <actions />
                     <sub-events>
                         <variable constant="0" name="Scale" sid="438648770353117" static="0" type="number">0</variable>
                         <event-block sid="472476662332690">
