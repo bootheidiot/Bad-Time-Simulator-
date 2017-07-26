@@ -6409,6 +6409,14 @@
                         <condition id="-2" name="On start of layout" sid="1807642351770676" type="System" />
                     </conditions>
                     <actions>
+                        <action id="-9" name="Set value" sid="804361015836670" type="System">
+                            <param id="0" name="Variable">ResizeSpeed</param>
+                            <param id="1" name="Value">480</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="534585765566689" type="System">
+                            <param id="0" name="Variable">EndResize</param>
+                            <param id="1" name="Value">&quot;&quot;</param>
+                        </action>
                         <action id="-3" name="Create object" sid="9749115502510345" type="System">
                             <param id="0" name="Object to create">CombatZoneUnclipper</param>
                             <param id="1" name="Layer">&quot;CombatZoneClipped&quot;</param>

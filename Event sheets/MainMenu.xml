@@ -8,6 +8,101 @@
         <include>RPGText</include>
         <include>AttackLoader</include>
         <include>Menus</include>
+        <event-block sid="194677073697328">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="301026708660067" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="493187173332363" type="System">
+                    <param id="0" name="Object to create">BattleFont</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">8</param>
+                    <param id="3" name="Y">416</param>
+                </action>
+                <action id="-10" name="Set value" sid="605342153352148" type="BattleFont">
+                    <param id="0" name="Instance variable">Name</param>
+                    <param id="1" name="Value">&quot;Update&quot;</param>
+                </action>
+                <action id="-5" name="Set width" sid="511018501210371" type="BattleFont">
+                    <param id="0" name="Width">640</param>
+                </action>
+                <action id="-6" name="Set height" sid="834519197109982" type="BattleFont">
+                    <param id="0" name="Height">64</param>
+                </action>
+                <action id="0" name="Set text" sid="997228410907339" type="BattleFont">
+                    <param id="0" name="Text">&quot;UPDATE TEXT&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="633456208298692" type="BattleFont">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="566182451496929">
+            <conditions>
+                <condition id="19" name="On update found" sid="271470835549957" type="Browser" />
+            </conditions>
+            <actions>
+                <action id="14" name="Log" sid="186182218521078" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;[DEBUG] Update found&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="871492164898327" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="735021892660141">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="408005518521694" type="RPGText">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Update&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="234881402244069" type="BattleFont">
+                            <param id="0" name="Text">&quot;UPDATE AVAILABLE.&quot; &amp; newline &amp; &quot;DOWNLOADING...&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="642147750921346" type="RPGText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="368479293880174">
+            <conditions>
+                <condition id="20" name="On update ready" sid="903434434188712" type="Browser" />
+            </conditions>
+            <actions>
+                <action id="14" name="Log" sid="591757470747617" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;[DEBUG] Update ready&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="791675166837046" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="590699814747872">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="890284827607274" type="RPGText">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Update&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="989726922429813" type="RPGText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="773819482594290" type="RPGText">
+                            <param id="0" name="Text">&quot;UPDATE AVAILABLE.&quot; &amp; newline &amp; &quot;PLEASE REFRESH THE PAGE (CTRL+F5).&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
         <event-group description="" sid="7618724697415427" title="MainMenu">
             <sub-events>
                 <event-block sid="485041284869353">
