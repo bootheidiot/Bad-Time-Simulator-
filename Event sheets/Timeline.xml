@@ -256,6 +256,18 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="942646080486819">
+                    <conditions>
+                        <condition id="0" name="On function" sid="585510407956809" type="Function">
+                            <param id="0" name="Name">&quot;TLIsRunning&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="794982817895681" type="Function">
+                            <param id="0" name="Value">Running</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="6217520153021708">
                     <conditions>
                         <condition id="0" name="On function" sid="2682162514664712" type="Function">

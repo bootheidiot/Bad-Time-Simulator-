@@ -8,8 +8,10 @@
         <variable constant="1" name="MODE_NORMAL" sid="7136545053781815" static="0" type="number">0</variable>
         <variable constant="1" name="MODE_ENDLESS" sid="2256941513066222" static="0" type="number">1</variable>
         <variable constant="1" name="MODE_SINGLE" sid="7019692061495417" static="0" type="number">2</variable>
+        <variable constant="1" name="MODE_PRACTICE" sid="631186454787328" static="0" type="number">3</variable>
         <variable constant="0" name="SimulatorMode" sid="2567313271818781" static="0" type="number">0</variable>
         <variable constant="0" name="EndlessStage" sid="1966297049622465" static="0" type="number">0</variable>
+        <variable constant="0" name="PracticeTarget" sid="824857649224256" static="0" type="number">60</variable>
         <variable constant="0" name="SingleAttack" sid="9637412728316299" static="0" type="text"></variable>
         <variable constant="0" name="Name" sid="8522084662131715" static="0" type="text">Chara</variable>
         <variable constant="0" name="HP" sid="4067313995094888" static="0" type="number">92</variable>

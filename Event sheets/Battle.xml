@@ -301,23 +301,32 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="2624017497664622">
+                                <event-block disabled="1" sid="2624017497664622">
                                     <conditions>
                                         <condition id="-18" name="Is in preview" sid="4138177267949362" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action disabled="1" id="-10" name="Set value" sid="4208605593275383" type="SansLegs">
+                                        <action id="-10" name="Set value" sid="4208605593275383" type="SansLegs">
                                             <param id="0" name="Instance variable">HitAttempts</param>
                                             <param id="1" name="Value">16</param>
                                         </action>
-                                        <action disabled="1" id="-10" name="Set value" sid="6755981998704707" type="SansLegs">
+                                        <action id="-10" name="Set value" sid="6755981998704707" type="SansLegs">
                                             <param id="0" name="Instance variable">NextAttack</param>
-                                            <param id="1" name="Value">9</param>
+                                            <param id="1" name="Value">7</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="166479888209949" type="Function">
+                                            <param id="0" name="Name">&quot;SetPracticeAttack&quot;</param>
+                                            <param id="1" name="Parameter {n}">SansLegs.NextAttack</param>
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="5397041653044339">
+                                <event-block any="1" sid="5397041653044339">
                                     <conditions>
+                                        <condition id="-14" name="Compare variable" sid="545108570469385" type="System">
+                                            <param id="0" name="Variable">SimulatorMode</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">MODE_NORMAL</param>
+                                        </condition>
                                         <condition id="-7" name="Compare instance variable" sid="4926164433409186" type="SansLegs">
                                             <param id="0" name="Instance variable">NextAttack</param>
                                             <param id="1" name="Comparison">0</param>
@@ -336,6 +345,9 @@
                                         <condition id="-22" name="Else" sid="6666873587019407" type="System" />
                                     </conditions>
                                     <actions>
+                                        <action id="-16" name="Wait" sid="641945763674282" type="System">
+                                            <param id="0" name="Seconds">0</param>
+                                        </action>
                                         <action id="0" name="Call function" sid="1184803353579677" type="Function">
                                             <param id="0" name="Name">&quot;EndAttack&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
@@ -1157,6 +1169,10 @@
                     <param id="0" name="Name">&quot;ResetVars&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
+                <action id="-35" name="Set layer transparent" sid="678532394187058" type="System">
+                    <param id="0" name="Layer">&quot;Overlay&quot;</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="2362615410620619">
@@ -1263,6 +1279,21 @@
                                     </actions>
                                 </event-block>
                             </sub-events>
+                        </event-block>
+                        <event-block sid="103739778308313">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="552144905778336" type="SansLegs">
+                                    <param id="0" name="Instance variable">HitAttempts</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">13</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="22" name="Set paused" sid="856226024375401" type="Audio">
+                                    <param id="0" name="Tag">&quot;Music&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                            </actions>
                         </event-block>
                         <event-block sid="3246169237782454">
                             <conditions>
@@ -1542,6 +1573,7 @@
                             <param id="0" name="Tag">&quot;Music&quot;</param>
                             <param id="1" name="State">0</param>
                         </action>
+                        <action id="-9" name="Destroy" sid="582195085709399" type="AttackSprite" />
                         <action id="-9" name="Destroy" sid="6987923762829085" type="Attack9Patch" />
                     </actions>
                 </event-block>
@@ -1739,6 +1771,9 @@
                                 <condition id="-22" name="Else" sid="8736082174501314" type="System" />
                             </conditions>
                             <actions>
+                                <action id="-16" name="Wait" sid="570964253948250" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
                                 <action id="-9" name="Set value" sid="6812349676219753" type="System">
                                     <param id="0" name="Variable">MenuState</param>
                                     <param id="1" name="Value">0</param>
@@ -8505,6 +8540,321 @@
                             <param id="0" name="Y">CenterY + Intensity * choose(1, -1)</param>
                         </action>
                     </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="495560915448475" title="PracticeMode">
+            <sub-events>
+                <variable constant="0" name="PracticeAttack" sid="269328620281569" static="1" type="number">0</variable>
+                <variable constant="0" name="Failed" sid="240828477291614" static="1" type="number">0</variable>
+                <event-block sid="136582083461685">
+                    <conditions>
+                        <condition id="-3" name="On end of layout" sid="467416343489765" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="527019556160114" type="System">
+                            <param id="0" name="Variable">PracticeAttack</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="332659347405280">
+                    <conditions>
+                        <condition id="0" name="On function" sid="898957624830376" type="Function">
+                            <param id="0" name="Name">&quot;SetPracticeAttack&quot;</param>
+                        </condition>
+                        <condition id="-18" name="Is in preview" sid="946417863214528" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="592617553054849" type="System">
+                            <param id="0" name="Variable">PracticeAttack</param>
+                            <param id="1" name="Value">int(Function.Param(0))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="987148592699869">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="739880776800068" type="System">
+                            <param id="0" name="Variable">SimulatorMode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">MODE_PRACTICE</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="457672197639173" type="SansLegs">
+                            <param id="0" name="Instance variable">NextAttack</param>
+                            <param id="1" name="Value">PracticeAttack</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="283596206551521">
+                            <conditions>
+                                <condition id="0" name="On function" sid="205227642094877" type="Function">
+                                    <param id="0" name="Name">&quot;StartAttack&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="550560695441705" type="System">
+                                    <param id="0" name="Variable">HP</param>
+                                    <param id="1" name="Value">MaxHP</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="140649389753177" type="System">
+                                    <param id="0" name="Variable">KR</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="338571672395262" type="System">
+                                    <param id="0" name="Variable">Failed</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="344554124359375">
+                            <conditions>
+                                <condition id="0" name="On function" sid="301945784893307" type="Function">
+                                    <param id="0" name="Name">&quot;EndAttack&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="995447048705872">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="534471371208032" type="System">
+                                            <param id="0" name="Variable">Failed</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="881745530468964" type="System">
+                                            <param id="0" name="Variable">PracticeAttack</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="479817542647507" type="System">
+                                            <param id="0" name="Object to create">DamageFont</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">16</param>
+                                            <param id="3" name="Y">16</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="134424053483791" type="DamageFont">
+                                            <param id="0" name="Text">&quot;SUCCESS&quot;</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="380591048875847" type="DamageFont">
+                                            <param id="0" name="Width">256</param>
+                                            <param id="1" name="Height">32</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="821747686948053" type="DamageFont">
+                                            <param id="0" name="Instance variable">Timeout</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="819649176613760" type="DamageFont">
+                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                            <param id="1" name="Parameter index">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="856084709168820" type="DamageFont">
+                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                            <param id="1" name="Parameter index">1</param>
+                                            <param id="2" name="Value">100</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="675965563926450" type="DamageFont">
+                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                            <param id="1" name="Parameter index">2</param>
+                                            <param id="2" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="650110406754044">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="196723402698757" type="SansLegs">
+                                                    <param id="0" name="Instance variable">HitAttempts</param>
+                                                    <param id="1" name="Comparison">2</param>
+                                                    <param id="2" name="Value">13</param>
+                                                </condition>
+                                                <condition id="-14" name="Compare variable" sid="529322749066441" type="System">
+                                                    <param id="0" name="Variable">PracticeAttack</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">14</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="976393462683652" type="SansLegs">
+                                                    <param id="0" name="Instance variable">HitAttempts</param>
+                                                    <param id="1" name="Value">14</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="599424083330358" type="System">
+                                                    <param id="0" name="Variable">PracticeAttack</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="560991448539643">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="736006944728803" type="SansLegs">
+                                                    <param id="0" name="Instance variable">HitAttempts</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">13</param>
+                                                </condition>
+                                                <condition id="-14" name="Compare variable" sid="693018060570776" type="System">
+                                                    <param id="0" name="Variable">PracticeAttack</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">9</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="153387310587038" type="System">
+                                                    <param id="0" name="Variable">PracticeAttack</param>
+                                                    <param id="1" name="Value">9</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="226066774179952">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="650527504183614" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="777921638261195" type="System">
+                                            <param id="0" name="Object to create">DamageFont</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">16</param>
+                                            <param id="3" name="Y">16</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="664980966081108" type="DamageFont">
+                                            <param id="0" name="Text">&quot;FAILURE&quot;</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="919358951880040" type="DamageFont">
+                                            <param id="0" name="Width">256</param>
+                                            <param id="1" name="Height">32</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="143812776820792" type="DamageFont">
+                                            <param id="0" name="Instance variable">Timeout</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="209147796693642" type="DamageFont">
+                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                            <param id="1" name="Parameter index">0</param>
+                                            <param id="2" name="Value">100</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="393804673495108" type="DamageFont">
+                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                            <param id="1" name="Parameter index">1</param>
+                                            <param id="2" name="Value">0</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="350664351602061" type="DamageFont">
+                                            <param id="0" name="Effect">&quot;Tint&quot;</param>
+                                            <param id="1" name="Parameter index">2</param>
+                                            <param id="2" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="580793282266031">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="124979388580869" type="SansLegs">
+                                            <param id="0" name="Instance variable">HitAttempts</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">13</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="907220538905454" type="System">
+                                            <param id="0" name="Variable">PracticeAttack</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">9</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="590985587115177" type="SansLegs">
+                                            <param id="0" name="Instance variable">HitAttempts</param>
+                                            <param id="1" name="Value">23</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="831017196623551">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="703852682122811" type="PlayerHeart">
+                                    <param id="0" name="Instance variable">SlamDamage</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="865318151737216" type="System">
+                                    <param id="0" name="First value">Function.Call(&quot;TLIsRunning&quot;)</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="PracticeTargetTest" sid="839803078953727" static="0" type="number">0</variable>
+                                <event-block sid="650663713813036">
+                                    <conditions>
+                                        <condition id="-1" name="Every tick" sid="605810820112301" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="987288965235691" type="System">
+                                            <param id="0" name="Variable">PracticeTargetTest</param>
+                                            <param id="1" name="Value">PracticeTarget</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="925466277471302">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="770494302783437" type="SansLegs">
+                                            <param id="0" name="Instance variable">HitAttempts</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">22</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="240037854357498" type="System">
+                                            <param id="0" name="Variable">PracticeTargetTest</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="724967201428597">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="908913099483133" type="System">
+                                            <param id="0" name="First value">HP - KR</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">PracticeTargetTest</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="385599985398910">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="524581322234996" type="SansLegs">
+                                                    <param id="0" name="Instance variable">HitAttempts</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">22</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="325676678809995" type="SansLegs">
+                                                    <param id="0" name="Instance variable">HitAttempts</param>
+                                                    <param id="1" name="Value">22</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="189038966594761">
+                                            <conditions>
+                                                <condition id="-1" name="Every tick" sid="198629089899494" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="726604368094586" type="System">
+                                                    <param id="0" name="Variable">Failed</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="616579381246618" type="Function">
+                                                    <param id="0" name="Name">&quot;EndAttack&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>

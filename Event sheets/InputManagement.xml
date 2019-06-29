@@ -249,10 +249,10 @@
                         <event-block any="1" sid="1936143924239781">
                             <conditions>
                                 <condition id="2" name="Key is down" sid="3552193861153495" type="Keyboard">
-                                    <param id="0" name="Key">38 (Up arrow)</param>
+                                    <param id="0" name="Key">38</param>
                                 </condition>
                                 <condition id="2" name="Key is down" sid="4868003248484891" type="Keyboard">
-                                    <param id="0" name="Key">87 (W)</param>
+                                    <param id="0" name="Key">87</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -265,10 +265,10 @@
                         <event-block any="1" sid="5325358493886754">
                             <conditions>
                                 <condition id="2" name="Key is down" sid="594305958852773" type="Keyboard">
-                                    <param id="0" name="Key">40 (Down arrow)</param>
+                                    <param id="0" name="Key">40</param>
                                 </condition>
                                 <condition id="2" name="Key is down" sid="1628045043863816" type="Keyboard">
-                                    <param id="0" name="Key">83 (S)</param>
+                                    <param id="0" name="Key">83</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -281,10 +281,10 @@
                         <event-block any="1" sid="7872809225198566">
                             <conditions>
                                 <condition id="2" name="Key is down" sid="1299449188102976" type="Keyboard">
-                                    <param id="0" name="Key">37 (Left arrow)</param>
+                                    <param id="0" name="Key">37</param>
                                 </condition>
                                 <condition id="2" name="Key is down" sid="6476670649189529" type="Keyboard">
-                                    <param id="0" name="Key">65 (A)</param>
+                                    <param id="0" name="Key">65</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -297,10 +297,10 @@
                         <event-block any="1" sid="2614740999858778">
                             <conditions>
                                 <condition id="2" name="Key is down" sid="7423979685350929" type="Keyboard">
-                                    <param id="0" name="Key">39 (Right arrow)</param>
+                                    <param id="0" name="Key">39</param>
                                 </condition>
                                 <condition id="2" name="Key is down" sid="6992990226848274" type="Keyboard">
-                                    <param id="0" name="Key">68 (D)</param>
+                                    <param id="0" name="Key">68</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -313,10 +313,10 @@
                         <event-block any="1" sid="1497366882496331">
                             <conditions>
                                 <condition id="2" name="Key is down" sid="1186023697088874" type="Keyboard">
-                                    <param id="0" name="Key">90 (Z)</param>
+                                    <param id="0" name="Key">90</param>
                                 </condition>
                                 <condition id="2" name="Key is down" sid="5599487570691262" type="Keyboard">
-                                    <param id="0" name="Key">13 (Return)</param>
+                                    <param id="0" name="Key">13</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -329,10 +329,10 @@
                         <event-block any="1" sid="4623232669904996">
                             <conditions>
                                 <condition id="2" name="Key is down" sid="5021788616537434" type="Keyboard">
-                                    <param id="0" name="Key">88 (X)</param>
+                                    <param id="0" name="Key">88</param>
                                 </condition>
                                 <condition id="2" name="Key is down" sid="1588947091940208" type="Keyboard">
-                                    <param id="0" name="Key">16 (Shift)</param>
+                                    <param id="0" name="Key">16</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -345,10 +345,10 @@
                         <event-block any="1" sid="1556078509265339">
                             <conditions>
                                 <condition id="2" name="Key is down" sid="1509728579883262" type="Keyboard">
-                                    <param id="0" name="Key">67 (C)</param>
+                                    <param id="0" name="Key">67</param>
                                 </condition>
                                 <condition id="2" name="Key is down" sid="596894329683083" type="Keyboard">
-                                    <param id="0" name="Key">17 (Ctrl)</param>
+                                    <param id="0" name="Key">17</param>
                                 </condition>
                             </conditions>
                             <actions>

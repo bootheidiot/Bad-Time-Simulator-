@@ -97,7 +97,7 @@
                             <param id="0" name="Visibility">1</param>
                         </action>
                         <action id="0" name="Set text" sid="773819482594290" type="RPGText">
-                            <param id="0" name="Text">&quot;UPDATE AVAILABLE.&quot; &amp; newline &amp; &quot;PLEASE REFRESH THE PAGE (CTRL+F5).&quot;</param>
+                            <param id="0" name="Text">&quot;UPDATE AVAILABLE.&quot; &amp; newline &amp; &quot;PLEASE REFRESH THE PAGE.&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -141,17 +141,21 @@
                             <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
                             <param id="1" name="Parameter {n}">0{###}192{###}96{###}0{###}&quot;Normal&quot;{###}&quot;MenuModeNormal&quot;</param>
                         </action>
+                        <action id="0" name="Call function" sid="574106720171711" type="Function">
+                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                            <param id="1" name="Parameter {n}">0{###}192{###}128{###}1{###}&quot;Practice&quot;{###}&quot;MenuModePractice&quot;</param>
+                        </action>
                         <action id="0" name="Call function" sid="304790185942551" type="Function">
                             <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
-                            <param id="1" name="Parameter {n}">0{###}192{###}128{###}1{###}&quot;Endless&quot;{###}&quot;MenuModeEndless&quot;</param>
+                            <param id="1" name="Parameter {n}">0{###}192{###}160{###}2{###}&quot;Endless&quot;{###}&quot;MenuModeEndless&quot;</param>
                         </action>
                         <action id="0" name="Call function" sid="326311762535984" type="Function">
                             <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
-                            <param id="1" name="Parameter {n}">0{###}192{###}160{###}2{###}&quot;Single attack&quot;{###}&quot;MenuModeSingle&quot;</param>
+                            <param id="1" name="Parameter {n}">0{###}192{###}192{###}3{###}&quot;Single attack&quot;{###}&quot;MenuModeSingle&quot;</param>
                         </action>
                         <action id="0" name="Call function" sid="516406951993025" type="Function">
                             <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
-                            <param id="1" name="Parameter {n}">0{###}192{###}192{###}3{###}&quot;Custom attack&quot;{###}&quot;MenuModeCustom&quot;</param>
+                            <param id="1" name="Parameter {n}">0{###}192{###}224{###}4{###}&quot;Custom attack&quot;{###}&quot;MenuModeCustom&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -167,6 +171,22 @@
                             <param id="1" name="Value">MODE_NORMAL</param>
                         </action>
                         <action id="-2" name="Go to layout" sid="6921132940594369" type="System">
+                            <param id="0" name="Layout">BattleScreen</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="732992713640422">
+                    <conditions>
+                        <condition id="0" name="On function" sid="630588370956338" type="Function">
+                            <param id="0" name="Name">&quot;MenuModePractice&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="430576558749824" type="System">
+                            <param id="0" name="Variable">SimulatorMode</param>
+                            <param id="1" name="Value">MODE_PRACTICE</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="198624542462292" type="System">
                             <param id="0" name="Layout">BattleScreen</param>
                         </action>
                     </actions>
