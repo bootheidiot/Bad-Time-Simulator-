@@ -184,7 +184,7 @@
                             <conditions>
                                 <condition id="5" name="Compare axis" sid="8233388208284703" type="Gamepad">
                                     <param id="0" name="Gamepad">ID</param>
-                                    <param id="1" name="Axis">1</param>
+                                    <param id="1" name="Axis">0</param>
                                     <param id="2" name="Comparison">4</param>
                                     <param id="3" name="Value">DEADZONE</param>
                                 </condition>
